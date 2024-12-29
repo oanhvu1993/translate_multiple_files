@@ -1,0 +1,371 @@
+1
+00:00:01,020 --> 00:00:03,940
+Xin chào, đây là John từ cave of programming đến.
+
+2
+00:00:03,950 --> 00:00:09,840
+Tôi thực sự đang có video này, tôi nghĩ là khoảng hai năm sau khi ghi hình khóa học swing này.
+
+3
+00:00:10,140 --> 00:00:14,180
+Và có ba điều mà tôi muốn nói với các bạn trong video này.
+
+4
+00:00:14,190 --> 00:00:20,740
+Đầu tiên là sự hỗ trợ applet trong các trình duyệt thậm chí còn kém hơn so với trước đây.
+
+5
+00:00:20,760 --> 00:00:23,940
+Tôi nghĩ rằng applet thực sự đang trên đà bị loại bỏ.
+
+6
+00:00:24,210 --> 00:00:29,140
+Vì vậy, trong đoạn mã mà tôi sắp cho các bạn xem, chúng ta sẽ đề cập đến hoạt ảnh.
+
+7
+00:00:29,250 --> 00:00:31,320
+Tôi sẽ làm điều đó trong bối cảnh của một applet.
+
+8
+00:00:31,470 --> 00:00:33,750
+Và tất cả điều đó sẽ hoạt động trong Eclipse.
+
+9
+00:00:33,810 --> 00:00:38,990
+Nhưng có một video mà tôi chỉ cho các bạn cách triển khai nó, applet với h.t. email.
+
+10
+00:00:39,060 --> 00:00:46,710
+Bây giờ trình duyệt Chrome, tôi tin rằng đã loại bỏ hỗ trợ cho applet về cơ bản vào tháng 4 năm nay, tức là
+
+11
+00:00:46,710 --> 00:00:48,600
+năm 2015.
+
+12
+00:00:48,600 --> 00:00:53,320
+Vì vậy, bạn sẽ không thể chạy applet trên Chrome và nó cũng sẽ không hoạt động trên Opera.
+
+13
+00:00:53,370 --> 00:00:55,110
+Nó sẽ hoạt động trên các trình duyệt khác.
+
+14
+00:00:55,140 --> 00:01:00,260
+Mặc dù bạn có thể phải mày mò với cài đặt bảo mật của mình để làm cho nó hoạt động.
+
+15
+00:01:00,590 --> 00:01:08,790
+Và nơi duy nhất mà tôi thực sự từng thấy applet được sử dụng nghiêm túc là trong phần mềm nội bộ
+
+16
+00:01:09,210 --> 00:01:17,040
+nơi mọi người có thể kiểm soát tập trung các trình duyệt mà mọi người đang sử dụng và cả cài đặt bảo mật.
+
+17
+00:01:17,040 --> 00:01:23,400
+Vì vậy, điểm mấu chốt là hướng dẫn này vẫn tốt, nó vẫn tốt cho việc tìm hiểu về hoạt ảnh đặc biệt
+
+18
+00:01:23,670 --> 00:01:28,520
+Nhưng khi chúng ta đến với video về việc triển khai applet, bạn có thể muốn cân nhắc bỏ qua phần đó.
+
+19
+00:01:28,530 --> 00:01:34,800
+Trừ khi bạn hình dung bạn có thể phát triển một applet nội bộ một ngày nào đó để sử dụng trong
+
+20
+00:01:34,800 --> 00:01:39,570
+một công ty, và khi đó nó vẫn có thể hữu ích.
+
+21
+00:01:40,350 --> 00:01:45,740
+Vì vậy, những gì tôi sẽ làm là để khắc phục thói quen đó là vào cuối phần này.
+
+22
+00:01:45,750 --> 00:01:46,610
+Tôi sẽ thêm một video.
+
+23
+00:01:46,620 --> 00:01:53,580
+Nó chỉ cho bạn cách biến đoạn mã này thành một ứng dụng swing trên máy tính để bàn và đó cũng là một điều khá tốt
+
+24
+00:01:53,580 --> 00:01:57,330
+mà bạn có thể thử tự mình nếu bạn muốn một chút thử thách mà bạn có thể
+
+25
+00:01:57,330 --> 00:01:57,920
+làm được.
+
+26
+00:01:58,140 --> 00:02:04,200
+Nếu bạn theo dõi khóa học này cho đến nay, thì mã mà chúng ta sắp xem sẽ hoạt động trong Eclipse.
+
+27
+00:02:04,200 --> 00:02:09,960
+Chỉ có một video về việc triển khai applet là có khả năng khó khăn và nếu bạn đang
+
+28
+00:02:09,960 --> 00:02:14,790
+sử dụng Chrome hoặc Opera, nó sẽ không hoạt động nữa.
+
+29
+00:02:15,310 --> 00:02:21,630
+Vì vậy, một vài điều khác mà tôi muốn đề cập là tôi đã có một máy tính Mac bây giờ và khi
+
+30
+00:02:21,630 --> 00:02:24,500
+tôi cố gắng chạy applet này trong Mac.
+
+31
+00:02:24,840 --> 00:02:31,800
+Vì vậy, nếu tôi làm điều này, đây là những gì nó sẽ trông như thế này, vì vậy chúng ta sẽ kết thúc với cái này ở cuối khóa học
+
+32
+00:02:32,150 --> 00:02:33,970
+và đó là một quả bóng nảy ra khỏi một cây gậy.
+
+33
+00:02:34,140 --> 00:02:36,630
+Nhưng thực tế chúng ta hãy quay lại.
+
+34
+00:02:36,630 --> 00:02:38,980
+Tôi thấy rằng ban đầu nó thực sự bị treo.
+
+35
+00:02:39,060 --> 00:02:46,440
+Vì vậy, có một trò chơi Java này, nơi chúng ta sẽ phát triển một loại thành phần hiển thị quả bóng nảy này
+
+36
+00:02:46,470 --> 00:02:49,060
+nảy xung quanh các thành phần tùy chỉnh.
+
+37
+00:02:49,290 --> 00:02:56,640
+Và trong đó có một số đoạn mã để ẩn con trỏ và cách chúng ta làm điều đó là chúng ta tạo một hình ảnh trống
+
+38
+00:02:56,700 --> 00:03:06,000
+và đặt nó làm con trỏ bằng cách sử dụng cái này hidden cursor bằng get toolkit create custom cursor.
+
+39
+00:03:06,000 --> 00:03:12,030
+Vấn đề là khi bạn tạo một con trỏ, bạn phải chỉ định một điểm nóng và đó là điểm
+
+40
+00:03:12,030 --> 00:03:18,990
+bên trong hình ảnh con trỏ thực sự nhấp vào mọi thứ và ban đầu trong mã mà bạn sắp
+
+41
+00:03:18,990 --> 00:03:20,300
+xem trong phần tiếp theo.
+
+42
+00:03:20,310 --> 00:03:27,010
+Tôi đặt điểm đó là 1 1 và nếu bạn làm như vậy, tôi phát hiện ra trên Mac nó không thực sự hoạt động.
+
+43
+00:03:27,030 --> 00:03:27,960
+Hãy thử lại lần nữa.
+
+44
+00:03:27,960 --> 00:03:29,990
+Chạy thử xem điều gì sẽ xảy ra.
+
+45
+00:03:30,000 --> 00:03:37,170
+Đây là một loại trình xem applet trống từ Eclipse và chúng ta nhận được loại dấu vết ngoại lệ này.
+
+46
+00:03:37,310 --> 00:03:42,240
+Và nếu bạn tìm dòng đầu tiên ở đây, nó thực sự nằm trong đoạn mã mà chúng ta đã viết, mà chúng ta sẽ
+
+47
+00:03:42,240 --> 00:03:44,130
+viết trong phần tiếp theo.
+
+48
+00:03:44,130 --> 00:03:52,020
+Ngay tại đây trên dòng này nó tạo ra con trỏ tùy chỉnh và điều đó có thể được sửa bằng cách đặt điểm nóng
+
+49
+00:03:52,170 --> 00:03:55,080
+thành điểm không không.
+
+50
+00:03:55,130 --> 00:03:57,260
+Sau đó nó hoạt động.
+
+51
+00:03:57,300 --> 00:04:02,940
+Về lý thuyết, các ứng dụng swing hoàn toàn đa nền tảng nhưng đúng là đôi khi chúng không đa
+
+52
+00:04:02,940 --> 00:04:04,700
+nền tảng như bạn muốn.
+
+53
+00:04:04,920 --> 00:04:12,780
+Và nếu bạn thực sự muốn triển khai một ứng dụng swing bất kỳ loại nào, thì tốt nhất bạn nên kiểm tra nó trên tất cả
+
+54
+00:04:12,780 --> 00:04:18,120
+các nền tảng, tất cả các phiên bản hệ điều hành khác nhau mà bạn có thể muốn triển khai nó, điều mà
+
+55
+00:04:18,120 --> 00:04:20,140
+thật không may là tôi không thể làm được.
+
+56
+00:04:20,160 --> 00:04:25,830
+Tôi đã từng có Windows và tôi chỉ có Mac, nhưng đây là điều duy nhất tôi phát hiện ra rằng thực sự
+
+57
+00:04:25,830 --> 00:04:31,740
+không hoạt động, ít nhất là trên phiên bản hệ điều hành Mac này.
+
+58
+00:04:31,740 --> 00:04:33,230
+Vì vậy, chúng ta hãy chạy lại nó bây giờ.
+
+59
+00:04:33,240 --> 00:04:34,600
+Và bây giờ thì ổn rồi.
+
+60
+00:04:34,710 --> 00:04:41,490
+Một điểm nhỏ khác là khi tôi phát triển chương trình này như bạn sẽ thấy trong phần tiếp theo
+
+61
+00:04:41,490 --> 00:04:42,410
+.
+
+62
+00:04:42,570 --> 00:04:47,250
+Chúng ta có một chút ở đây, nơi chúng ta có một cây gậy mà chúng ta sử dụng để nảy quả bóng xung quanh.
+
+63
+00:04:47,280 --> 00:04:54,720
+Và ban đầu khi chúng ta phát hiện sự giao nhau của quả bóng với cây gậy, tôi đảo ngược hướng x và y
+
+64
+00:04:54,720 --> 00:04:55,630
+của quả bóng.
+
+65
+00:04:55,770 --> 00:04:59,930
+Nhưng điều đó tạo ra một sự nảy rất không tự nhiên vì nó có nghĩa là quả bóng.
+
+66
+00:05:00,000 --> 00:05:06,920
+Nảy ra ở cùng một góc mà nó chạm vào cây gậy như thế này, điều đó thật kỳ lạ.
+
+67
+00:05:06,930 --> 00:05:08,560
+Tôi không biết tại sao tôi đã làm điều đó ban đầu.
+
+68
+00:05:08,560 --> 00:05:13,560
+Vì vậy, để khắc phục điều đó nếu bạn không cải thiện thói quen đó, chỉ cần bình luận phần mã mà bạn sắp
+
+69
+00:05:13,560 --> 00:05:17,880
+xem sớm, phần đó sẽ đảo ngược hướng x của quả bóng.
+
+70
+00:05:17,880 --> 00:05:20,990
+Chỉ đảo ngược hướng y khi nó chạm vào cây gậy.
+
+71
+00:05:21,600 --> 00:05:23,250
+Vậy đó là cơ bản.
+
+72
+00:05:23,270 --> 00:05:27,730
+Và vì vậy, đề nghị của tôi là bạn làm theo mã này.
+
+73
+00:05:27,870 --> 00:05:34,170
+Chạy applet bất kỳ clip nào bạn có thể muốn bỏ qua phần về việc triển khai applet vì bạn
+
+74
+00:05:34,170 --> 00:05:38,550
+có thể bạn có thể thấy một applet nếu bạn đang chạy phần mềm nội bộ trong một công ty.
+
+75
+00:05:38,670 --> 00:05:42,470
+Nhưng ngoài ra thì thực sự chúng không hữu ích lắm.
+
+76
+00:05:42,510 --> 00:05:44,810
+Và chúng luôn hơi tệ.
+
+77
+00:05:44,820 --> 00:05:47,390
+Bạn biết đấy, chúng từng làm treo trình duyệt của bạn và các thứ khác.
+
+78
+00:05:47,790 --> 00:05:53,310
+Nếu bạn muốn triển khai một ứng dụng job trên Internet, bạn có thể làm điều đó với Java Web start và sau đó
+
+79
+00:05:53,310 --> 00:06:00,360
+nó không chạy trong trình duyệt hoặc ít nhất là cách hoạt động trong tất cả các trình duyệt sẽ không chạy trong
+
+80
+00:06:00,360 --> 00:06:02,220
+trình duyệt trên Chrome.
+
+81
+00:06:02,220 --> 00:06:07,830
+Ví dụ, bạn phải tải xuống một chút trang trại và nhấp vào nó và điều đó sẽ bắt đầu một chương trình job trên
+
+82
+00:06:07,890 --> 00:06:09,860
+máy tính để bàn của bạn.
+
+83
+00:06:09,900 --> 00:06:12,670
+Đó là loại nằm ngoài phạm vi của hướng dẫn này.
+
+84
+00:06:12,690 --> 00:06:13,860
+Nó hơi phức tạp.
+
+85
+00:06:13,860 --> 00:06:20,490
+Bạn phải thực hiện một số thứ dòng lệnh một chút để ký vào jaw của bạn và triển khai nó trên Internet.
+
+86
+00:06:20,490 --> 00:06:26,550
+Bạn cũng sẽ phải trả tiền cho một chứng chỉ từ một cơ quan cấp chứng chỉ, vì vậy chúng tôi sẽ không đi sâu vào vấn đề đó
+
+87
+00:06:26,550 --> 00:06:31,380
+nhưng nếu bạn muốn triển khai Java ra khỏi Internet, đó có lẽ là cách tốt nhất để làm
+
+88
+00:06:31,380 --> 00:06:31,530
+điều đó.
+
+89
+00:06:31,530 --> 00:06:33,940
+Và nó được gọi là Java Web start.
+
+90
+00:06:34,350 --> 00:06:40,590
+Được rồi, tôi sẽ dừng lại ở đây bây giờ và tôi cũng sẽ thêm một video bổ sung vào cuối phần này
+
+91
+00:06:40,650 --> 00:06:45,410
+về cách biến applet của bạn thành một Swingle chạy trên máy tính để bàn.
+
+92
+00:06:45,640 --> 00:06:47,580
+Được rồi, cho đến lần sau.
+
+93
+00:06:47,580 --> 00:06:49,230
+Chúc các bạn code vui vẻ.

@@ -1,10 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-
+const AI_KEY = "AIzaSyDRDzwojrzz97W_UH8tq4q2EDR_uoTxRKg";
 
 export const retrieveTranslation = async (text, language) => {
     //Choose key and model
-    const genAI = new GoogleGenerativeAI("AIzaSyDRDzwojrzz97W_UH8tq4q2EDR_uoTxRKg");
+    const genAI = new GoogleGenerativeAI(AI_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
     //Create request for AI
     const prompt = `Just show the result. Translate this to ${language} : ${text}`;
