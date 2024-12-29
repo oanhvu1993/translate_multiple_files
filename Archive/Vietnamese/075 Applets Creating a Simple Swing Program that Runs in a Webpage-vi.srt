@@ -1,0 +1,303 @@
+1
+00:00:01,550 --> 00:00:05,500
+Xin chào, đây là John từ caveofprogamming.com.
+
+2
+00:00:05,500 --> 00:00:09,190
+Trong hướng dẫn này, chúng ta sẽ hoàn toàn thay đổi hướng đi, bởi vì vẫn còn
+
+3
+00:00:09,190 --> 00:00:13,520
+một vài điều nhỏ mà tôi vẫn muốn chỉ cho bạn.
+
+4
+00:00:13,520 --> 00:00:16,875
+Và tôi sẽ chỉ cho bạn cách ghép một applet ở đây,
+
+5
+00:00:16,875 --> 00:00:20,380
+và chúng ta sẽ sử dụng nhiều ngữ cảnh cho một vài điều cuối cùng.
+
+6
+00:00:20,380 --> 00:00:24,632
+Nhưng hầu hết những thứ tôi chỉ cho bạn ở đây, áp dụng cho bất kỳ
+
+7
+00:00:24,632 --> 00:00:28,500
+ứng dụng swing nào và bạn có thể sử dụng nó trong bất kỳ loại ứng dụng swing nào.
+
+8
+00:00:28,500 --> 00:00:31,060
+Và tương tự như vậy, những thứ tôi đã chỉ cho bạn trước đây,
+
+9
+00:00:31,060 --> 00:00:34,130
+hầu như tất cả cũng có thể được sử dụng trong các applet.
+
+10
+00:00:34,130 --> 00:00:38,740
+Vì vậy, applet là một loại ứng dụng
+
+11
+00:00:38,740 --> 00:00:41,600
+mà bạn có thể nhúng vào một trang web.
+
+12
+00:00:41,600 --> 00:00:45,150
+Và thường mọi người chọn sử dụng Flash hơn là Java cho
+
+13
+00:00:45,150 --> 00:00:49,210
+những mục đích đó ngày nay, nhưng nó rất hữu ích, [CƯỜI] tôi suýt nói là vô dụng.
+
+14
+00:00:49,210 --> 00:00:52,520
+Nhưng đó là một điều hữu ích cần biết trong trường hợp bạn cần biết.
+
+15
+00:00:52,520 --> 00:00:55,530
+Và chúng vẫn được sử dụng và chúng vẫn hữu ích.
+
+16
+00:00:56,690 --> 00:01:00,740
+Nhưng một nhược điểm của applet so với Flash là nếu
+
+17
+00:01:00,740 --> 00:01:03,430
+bạn có một applet được nhúng vào một trang web, bạn sẽ thấy
+
+18
+00:01:03,430 --> 00:01:06,540
+một lỗi, à không phải lỗi mà là một cảnh báo ở trên cùng
+
+19
+00:01:06,540 --> 00:01:08,850
+của trình duyệt của bạn, nói rằng bạn có muốn chạy applet này không.
+
+20
+00:01:08,850 --> 00:01:12,386
+Và nó khá khó chịu khi phải, bạn
+
+21
+00:01:12,386 --> 00:01:15,580
+biết đấy, phải hiển thị lỗi đó cho người dùng.
+
+22
+00:01:15,580 --> 00:01:17,540
+Vì vậy, tôi nghĩ vì lý do đó, hơn bất kỳ
+
+23
+00:01:17,540 --> 00:01:21,750
+lý do nào khác, applet không quá phổ biến, nhưng chúng có thể hữu ích.
+
+24
+00:01:24,250 --> 00:01:27,410
+Vì vậy, hãy nhấp chuột phải vào thư mục dự án ở đây và tôi
+
+25
+00:01:27,410 --> 00:01:30,770
+sẽ đến một New, chúng ta sẽ tạo một lớp mới.
+
+26
+00:01:30,770 --> 00:01:34,180
+Và tôi sẽ chỉ gọi nó là Main và nhấp vào Finish.
+
+27
+00:01:35,210 --> 00:01:37,930
+Bây giờ, tôi sẽ làm cho main mở rộng.
+
+28
+00:01:39,350 --> 00:01:42,020
+Mở rộng JApplet.
+
+29
+00:01:42,020 --> 00:01:45,170
+Vì vậy, applet không nhất thiết phải dựa trên Swing, nhưng chúng có thể.
+
+30
+00:01:45,170 --> 00:01:49,480
+Và cái này sẽ là như vậy, vì đây là một loạt hướng dẫn về Swing.
+
+31
+00:01:49,480 --> 00:01:52,150
+Tôi sẽ thực hiện Ctrl+Shift để thêm import.
+
+32
+00:01:53,485 --> 00:01:54,867
+và, và nhấp vào Lưu.
+
+33
+00:01:54,867 --> 00:01:59,140
+Bây giờ JApplet có một loạt các phương thức mà bạn sẽ muốn
+
+34
+00:01:59,140 --> 00:02:02,020
+ghi đè, hoặc ít nhất bạn sẽ muốn ghi đè một số trong số chúng.
+
+35
+00:02:02,020 --> 00:02:05,169
+Và hãy xem một số cái quan trọng nhất trong hướng dẫn này.
+
+36
+00:02:05,169 --> 00:02:10,300
+Vì vậy, tôi đã nhấp chuột phải vào đó và tôi đi đến Source > Override Implement Methods.
+
+37
+00:02:10,300 --> 00:02:13,979
+Xin lỗi vì tiếng ồn của các công nhân đang làm việc bên kia đường ở đây.
+
+38
+00:02:15,670 --> 00:02:21,100
+Và tôi sẽ đi, có rất nhiều tin nhắn ở đây, rất nhiều phương thức ở đây, mà
+
+39
+00:02:21,100 --> 00:02:26,580
+bạn có thể ghi đè, nhưng có khoảng bốn cái đặc biệt quan trọng.
+
+40
+00:02:26,580 --> 00:02:28,330
+Tôi nghĩ những cái dành riêng cho swing, thì
+
+41
+00:02:28,330 --> 00:02:30,890
+nói chung bạn có lẽ có thể thường để chúng như vậy.
+
+42
+00:02:30,890 --> 00:02:36,710
+Nếu bạn vào Applet ở đây, JApplet của nó dẫn xuất hoặc mở rộng applet.
+
+43
+00:02:38,680 --> 00:02:42,220
+Chúng ta có một phương thức init.
+
+44
+00:02:42,220 --> 00:02:46,610
+Init là nơi bạn thực hiện bất kỳ khởi tạo nào mà bạn phải làm trong applet của mình.
+
+45
+00:02:46,610 --> 00:02:49,650
+Vì vậy, nó giống như một hàm tạo, nhưng thay vì làm
+
+46
+00:02:49,650 --> 00:02:53,600
+khởi tạo trong một hàm tạo, cho một applet, bạn làm trong init.
+
+47
+00:02:53,600 --> 00:02:56,888
+Và, và nó được gọi khi applet đã được thiết lập xong.
+
+48
+00:02:56,888 --> 00:03:01,190
+Và bạn sẽ kết nối với cơ sở dữ liệu trong init, nếu bạn muốn.
+
+49
+00:03:01,190 --> 00:03:04,330
+Và nếu bạn phải hủy bất cứ thứ gì, như bạn phải
+
+50
+00:03:04,330 --> 00:03:07,310
+đóng kết nối cơ sở dữ liệu hoặc bất cứ thứ gì, bạn làm điều đó trong destroy.
+
+51
+00:03:09,000 --> 00:03:12,350
+Và cũng có một phương thức start.
+
+52
+00:03:12,350 --> 00:03:17,800
+Start được gọi bất cứ khi nào bản upload của bạn được hiển thị và nếu người dùng
+
+53
+00:03:17,800 --> 00:03:23,070
+đi đến một trang internet khác, duyệt ra khỏi upload, stop sẽ được gọi.
+
+54
+00:03:23,070 --> 00:03:27,250
+Vì vậy, nếu applet của bạn phải chạy, theo bất kỳ nghĩa nào, bạn, ví dụ như nếu bạn có
+
+55
+00:03:27,250 --> 00:03:32,830
+một bộ hẹn giờ hoặc một vòng lặp trò chơi, bạn muốn bắt đầu chạy nó trong start và bạn muốn dừng nó.
+
+56
+00:03:32,830 --> 00:03:37,020
+Bất cứ khi nào stop được gọi và sau đó nó bắt đầu lại từ đầu, bạn muốn khởi động lại nó.
+
+57
+00:03:37,020 --> 00:03:42,760
+Vì vậy, chúng ta sẽ chỉ làm việc với bốn cái này, tôi nghĩ trong hướng dẫn này.
+
+58
+00:03:44,542 --> 00:03:47,220
+vì vậy, hãy tạm thời,
+
+59
+00:03:47,220 --> 00:03:49,371
+hãy đặt một vài sysout vào đó và chúng ta sẽ
+
+60
+00:03:49,371 --> 00:03:51,570
+xem xét điều này và tìm hiểu chi tiết hơn trong tương lai.
+
+61
+00:03:51,570 --> 00:03:56,700
+Vì vậy, sysout ở đó, chúng ta đã có nó.
+
+62
+00:03:56,700 --> 00:04:01,254
+Được rồi, init, hãy sao chép cái đó.
+
+63
+00:04:01,254 --> 00:04:06,134
+Và hãy đặt destroy, destroy.
+
+64
+00:04:06,134 --> 00:04:10,470
+Và ở đây tôi sẽ có start và ở đây tất nhiên là stop.
+
+65
+00:04:12,690 --> 00:04:16,930
+Bây giờ, chúng ta sẽ xem xét cách nhúng cái này vào trang web, nhưng,
+
+66
+00:04:16,930 --> 00:04:22,030
+hiện tại, để kiểm tra applet của bạn, bạn có thể chỉ cần nhấp vào chạy như thế này.
+
+67
+00:04:22,030 --> 00:04:23,330
+Và đây là applet của bạn đang chạy.
+
+68
+00:04:23,330 --> 00:04:24,870
+Không có gì để xem vào lúc này.
+
+69
+00:04:24,870 --> 00:04:28,113
+Bạn có thể thấy rằng init đã được gọi.
+
+70
+00:04:28,113 --> 00:04:32,049
+Nó đã được gọi trước hết, và sau đó start được gọi, và
+
+71
+00:04:32,049 --> 00:04:36,889
+sau đó, nếu tôi thoát applet này, chúng ta sẽ nhận được stop và sau đó là destroy.
+
+72
+00:04:37,950 --> 00:04:40,040
+Và stop, hãy nhớ rằng start và stop có thể được
+
+73
+00:04:40,040 --> 00:04:44,660
+gọi nhiều lần bởi applet trong hoạt động, có thể nói là như vậy.
+
+74
+00:04:44,660 --> 00:04:46,800
+Vậy là xong cho hướng dẫn này; hãy tham gia với tôi
+
+75
+00:04:46,800 --> 00:04:49,757
+lần sau và cho đến lần sau, chúc bạn coding vui vẻ.
+
+76
+00:04:49,757 --> 00:04:50,017
+[TIẾNG ỒN]
