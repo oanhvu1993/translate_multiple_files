@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const AI_KEY = "AIzaSyDRDzwojrzz97W_UH8tq4q2EDR_uoTxRKg";
+// AIzaSyDRDzwojrzz97W_UH8tq4q2EDR_uoTxRKg
+const AI_KEY = "AIzaSyCF5QlWp_5q3AQTcNj6g46l3A2UZFHI37c";
 
 export const retrieveTranslation = async (text, language) => {
     //Choose key and model
@@ -19,7 +19,7 @@ export const retrieveTranslation = async (text, language) => {
 // async function runAll() {
 //     // Comment out or delete any sample cases you don't want to run.
 //     for (const text of test) {
-//         await retrieveTranslation(text, lang).then((data) => {
+//         retrieveTranslation(text, lang).then((data) => {
 //             console.log(data);
 //         });
 //     }

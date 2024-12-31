@@ -29,14 +29,12 @@ async function translateAllSrtFilesInFolder(path, lang) {
         // retrieve content in srt file
         const content = fs.readFileSync(`${path}${item}`, 'utf-8');
         // transalte and put in new folder
-        await retrieveTranslation(content, lang.long).then((data) => {
+        retrieveTranslation(content, lang.long).then((data) => {
             writeFile(`${newPath}/${item.replace("-en", `-${lang.short}`)}`, data, (err) => {
                 if (err) throw err;
                 console.log(`${item} has been translated`);
             });
         })
     }
-
-
 }
 translateAllSrtFilesInFolder(folderPath, language);

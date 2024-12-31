@@ -1,0 +1,15 @@
+1
+
+00:00:01,380 --> 00:00:05,896
+
+Hello in this tutorial we're gonna look at
+creating Swing
+
+
+
+2
+
+00:00:05,896 --> 00:00:10,852
+
+components that are completely drawn from
+scratch so to speak.
