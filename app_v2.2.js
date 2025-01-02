@@ -3,7 +3,7 @@ import { retrieveTranslation } from './translateFunction.js';
 import { configDotenv } from 'dotenv';
 configDotenv();
 
-
+// test
 const folderPath = process.env.FOLDER_PATH;
 const language = {
     name: process.env.LANGUAGE_NAME,
