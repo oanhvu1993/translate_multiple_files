@@ -1,7 +1,7 @@
 import fs, { writeFile } from "fs";
 import { retrieveTranslation } from "./translateFunction.js";
 import { configDotenv } from "dotenv";
-
+// test
 configDotenv();
 ////// Variable Declare////////////
 const folderPath = process.env.FOLDER_PATH;
