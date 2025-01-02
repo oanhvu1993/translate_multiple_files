@@ -1,0 +1,675 @@
+1
+00:00:01,380 --> 00:00:05,896
+Hello in this tutorial we're gonna look at
+creating Swing
+
+2
+00:00:05,896 --> 00:00:10,852
+components that are completely drawn from
+scratch so to speak.
+
+3
+00:00:10,852 --> 00:00:14,336
+And I'm just going to show you the basic
+principle here,
+
+4
+00:00:14,336 --> 00:00:19,294
+we're just gonna create a very, very
+simple completely black component.
+
+5
+00:00:19,294 --> 00:00:21,758
+And we'll kinda enlarge on the a little
+
+6
+00:00:21,758 --> 00:00:25,280
+bit in future tutorials by exploring the
+graphics API.
+
+7
+00:00:26,380 --> 00:00:29,740
+So I'm gonna show this within the context
+of this applet
+
+8
+00:00:29,740 --> 00:00:31,720
+that I've got, and at the moment, if I run
+it.
+
+9
+00:00:32,730 --> 00:00:34,650
+There's basically nothing in it, so it
+appears
+
+10
+00:00:34,650 --> 00:00:36,270
+gray and it's got this texting applet up
+there.
+
+11
+00:00:36,270 --> 00:00:40,520
+Actually I'm not sure if that a part of
+the applet or, or not.
+
+12
+00:00:40,520 --> 00:00:48,622
+But what I'm do is I'm gonna right click
+here and go to New > Class.
+
+13
+00:00:48,622 --> 00:00:53,145
+And I'm gonna create a component here
+which I'm gonna
+
+14
+00:00:53,145 --> 00:00:56,772
+call Game, which is gonna be not really a
+game.
+
+15
+00:00:56,772 --> 00:00:59,195
+But it could be the basis of a game, if
+
+16
+00:00:59,195 --> 00:01:03,588
+you're interested in creating games, and a
+bit finished there.
+
+17
+00:01:03,588 --> 00:01:08,384
+Now I'm gonna make Game, extend
+JComponent.
+
+18
+00:01:08,384 --> 00:01:13,334
+JComponent is the base class for Swing
+components.
+
+19
+00:01:13,334 --> 00:01:16,293
+So if you've got a component that looks
+like
+
+20
+00:01:16,293 --> 00:01:20,422
+no other component, then you probably want
+to extend JComponent.
+
+21
+00:01:20,422 --> 00:01:24,164
+If you wanted a component that had a
+panel, I'm sorry
+
+22
+00:01:24,164 --> 00:01:29,170
+that had a border, you probably wanna
+extend JPanel for example.
+
+23
+00:01:29,170 --> 00:01:32,250
+And if you wanted a component to look like
+a button.
+
+24
+00:01:32,250 --> 00:01:34,850
+You probably want to extend JButtons and
+so on.
+
+25
+00:01:34,850 --> 00:01:37,790
+But here I'm just, use the most basic
+form.
+
+26
+00:01:38,990 --> 00:01:45,870
+And, I can already add this game component
+to my, my applet.
+
+27
+00:01:45,870 --> 00:01:47,360
+So let's, let's just do that.
+
+28
+00:01:47,360 --> 00:01:49,360
+I'll go to init here.
+
+29
+00:01:49,360 --> 00:01:54,400
+And in init, I'm going to say set,
+setLayout, setLayout.
+
+30
+00:01:54,400 --> 00:01:58,390
+So, this is the same is if we were using a
+JFrame of course.
+
+31
+00:01:58,390 --> 00:02:01,520
+I just happen to be using a JApplet here.
+
+32
+00:02:02,560 --> 00:02:05,896
+So setLayout, and I'm just going to, I
+just want
+
+33
+00:02:05,896 --> 00:02:11,190
+to add one component to the, to the the
+applet frame.
+
+34
+00:02:11,190 --> 00:02:14,260
+So I'm just gonna use BorderLayout,
+because that will
+
+35
+00:02:14,260 --> 00:02:18,770
+enable me to just add the component at the
+center.
+
+36
+00:02:18,770 --> 00:02:24,480
+So, and then I'll say add, do Ctrl + Shift
++ O to add the import.
+
+37
+00:02:24,480 --> 00:02:29,690
+Add and I'll say add new game.
+
+38
+00:02:29,690 --> 00:02:33,735
+And let's just add game at the center
+there, so BorderLayout.CENTER.
+
+39
+00:02:34,890 --> 00:02:35,390
+There we go.
+
+40
+00:02:37,170 --> 00:02:39,430
+So now if I run this it's still not gonna
+look like
+
+41
+00:02:39,430 --> 00:02:45,680
+anything is just grey, this is just a
+JComponent that we're seeing.
+
+42
+00:02:45,680 --> 00:02:51,169
+But, I'm gonna go to gain now, and in this
+tutorial we're
+
+43
+00:02:51,169 --> 00:02:56,468
+just gonna make it say Component Black to
+use as a background.
+
+44
+00:02:56,468 --> 00:03:00,940
+But we, we'll see in a little bit about
+drawing in the process.
+
+45
+00:03:00,940 --> 00:03:06,738
+So if you right click here, and go to
+Source > Override > Implement methods.
+
+46
+00:03:06,738 --> 00:03:11,260
+And, JComponents has a bunch of methods,
+which are,
+
+47
+00:03:13,940 --> 00:03:17,320
+some of which may be useful.
+
+48
+00:03:17,320 --> 00:03:19,630
+But, where are we?
+
+49
+00:03:19,630 --> 00:03:21,120
+So yeah.
+
+50
+00:03:21,120 --> 00:03:25,640
+yeah, so the ones I wanna override one of
+these paint methods.
+
+51
+00:03:26,680 --> 00:03:31,370
+And the way this works is to, to actually
+paint
+
+52
+00:03:31,370 --> 00:03:34,590
+a component, to actually draw it in other
+words, paint.
+
+53
+00:03:34,590 --> 00:03:37,770
+Gets called by, by Swing, by the system.
+
+54
+00:03:39,040 --> 00:03:42,180
+And if you want to force paint to be
+called, you
+
+55
+00:03:42,180 --> 00:03:45,210
+don't call it directly yourself, you call
+a method called repaint.
+
+56
+00:03:45,210 --> 00:03:49,358
+And that triggers paint to be called, at
+the earliest opportunity.
+
+57
+00:03:49,358 --> 00:03:54,461
+Cuz usually it's only called when you're,
+component is first displayed.
+
+58
+00:03:54,461 --> 00:03:59,283
+Or when it's re-displayed after being
+covered by another window or something.
+
+59
+00:03:59,283 --> 00:04:02,760
+Now paint actually calls three other
+methods.
+
+60
+00:04:02,760 --> 00:04:07,230
+It calls these protective responses yellow
+diamond.
+
+61
+00:04:07,230 --> 00:04:10,970
+It calls first paint component, the paint,
+
+62
+00:04:10,970 --> 00:04:13,620
+paints kinda the background of the
+component.
+
+63
+00:04:13,620 --> 00:04:18,270
+Then it calls paintBorder, I think which
+paints
+
+64
+00:04:18,270 --> 00:04:20,650
+the border of the component if there is
+one.
+
+65
+00:04:20,650 --> 00:04:23,890
+And that obviously has to be on top of the
+background of the component.
+
+66
+00:04:23,890 --> 00:04:29,460
+And finally it calls paintChildren, and
+that paints any children
+
+67
+00:04:29,460 --> 00:04:32,320
+that you've added to the component like
+buttons or whatever.
+
+68
+00:04:33,490 --> 00:04:38,637
+So for the purposes of this tutorials I'm
+gonna override paintComponent.
+
+69
+00:04:38,637 --> 00:04:43,437
+Cuz I just want to create a completely
+different background for the component.
+
+70
+00:04:43,437 --> 00:04:45,141
+And if later on I decided to add a
+
+71
+00:04:45,141 --> 00:04:48,693
+border or something, then I'd want to
+paint that afterwards.
+
+72
+00:04:48,693 --> 00:04:51,565
+So, I'm gonna override this
+paintComponent.
+
+73
+00:04:51,565 --> 00:04:57,320
+Okay and now you'll notice that graphics
+
+74
+00:04:57,320 --> 00:05:03,150
+object G is passed in and that is what
+allows you to draw stuff basically.
+
+75
+00:05:04,530 --> 00:05:09,540
+But there's a little quirk here, because
+this graphics G, is kind
+
+76
+00:05:09,540 --> 00:05:14,460
+of a graded in the history of Swing to a
+different kinda object.
+
+77
+00:05:14,460 --> 00:05:20,120
+Called Graphic 2D, which is a child class
+of graphics.
+
+78
+00:05:20,120 --> 00:05:26,540
+So, this G is actually pointing, it's
+actually referencing Graphics 2D object.
+
+79
+00:05:26,540 --> 00:05:31,930
+And Graphics 2D have more capability than
+just graphics.
+
+80
+00:05:31,930 --> 00:05:37,870
+So the first thing to do is to say
+graphics, graphics
+
+81
+00:05:37,870 --> 00:05:43,890
+2D g2 equals and I'm going to cast the G
+to a graphics 2D.
+
+82
+00:05:45,010 --> 00:05:49,160
+And that will get us a graphics object
+with extended capabilities.
+
+83
+00:05:49,160 --> 00:05:51,790
+And, what will it do wrong here?
+
+84
+00:05:51,790 --> 00:05:56,410
+So graphics2D that should be right.
+
+85
+00:05:56,410 --> 00:05:58,270
+Do Ctrl + Shift + O type input.
+
+86
+00:05:58,270 --> 00:06:00,200
+Oh yeah, just gotta save it now.
+
+87
+00:06:00,200 --> 00:06:03,580
+And, and oh, I mistyped the X.
+
+88
+00:06:03,580 --> 00:06:07,130
+Okay save that, there we go.
+
+89
+00:06:07,130 --> 00:06:12,618
+And now I'm gonna set first of all the
+color to use for drawing.
+
+90
+00:06:12,618 --> 00:06:15,477
+And then, I'm going to create a filled
+rectangle
+
+91
+00:06:15,477 --> 00:06:18,141
+at the right size to fill the whole
+component.
+
+92
+00:06:18,141 --> 00:06:23,410
+So I'm just going to say set color, and
+call this method of JComponent.
+
+93
+00:06:23,410 --> 00:06:31,600
+I'm sorry of the graphics 2d, I'll say
+g2.set color.
+
+94
+00:06:31,600 --> 00:06:32,880
+And in here.
+
+95
+00:06:32,880 --> 00:06:34,200
+By the way, I should mention it.
+
+96
+00:06:34,200 --> 00:06:37,100
+And the release methods like set clip, but
+you wanna
+
+97
+00:06:37,100 --> 00:06:43,200
+be careful about changing the actual
+graphics object that's passed in.
+
+98
+00:06:43,200 --> 00:06:46,420
+Because it's kinda reused in other places.
+
+99
+00:06:46,420 --> 00:06:48,690
+And if you wanna do really radical crazy
+
+100
+00:06:48,690 --> 00:06:52,140
+things with your graphics object, like
+doing set clip.
+
+101
+00:06:52,140 --> 00:06:55,180
+You probably wanna create a new, you want
+to clone this graphics object.
+
+102
+00:06:55,180 --> 00:06:57,870
+Create a new one and manipulate that.
+
+103
+00:06:57,870 --> 00:07:00,260
+But here we're not gonna do anything too
+crazy.
+
+104
+00:07:00,260 --> 00:07:01,230
+So I'm gonna call set color.
+
+105
+00:07:01,230 --> 00:07:06,190
+And I'm gonna pass in there color.black.
+
+106
+00:07:06,190 --> 00:07:08,500
+And you notice you get like lower case and
+upper
+
+107
+00:07:08,500 --> 00:07:10,760
+case versus these constants, but you can
+use either one.
+
+108
+00:07:10,760 --> 00:07:12,070
+It doesn't matter.
+
+109
+00:07:12,070 --> 00:07:17,270
+So color.black is just a static, static
+member of the color class.
+
+110
+00:07:18,630 --> 00:07:20,910
+And then I'm gonna say g2.
+
+111
+00:07:20,910 --> 00:07:23,220
+And you've got methods like draw.
+
+112
+00:07:23,220 --> 00:07:25,660
+Draw, which you can pass a shape into.
+
+113
+00:07:25,660 --> 00:07:26,590
+We'll cover that later.
+
+114
+00:07:26,590 --> 00:07:31,010
+If I want to use a fill method such to
+fill an area.
+
+115
+00:07:31,010 --> 00:07:36,147
+And here, I'm going to use, actually, for
+this
+
+116
+00:07:36,147 --> 00:07:41,520
+tutorial, it's easier just to use
+fillRect, I think.
+
+117
+00:07:43,050 --> 00:07:47,100
+So, if I say here fillRect and pass in 0.
+
+118
+00:07:47,100 --> 00:07:52,328
+And 0 get width such as calling it a
+JComponent method
+
+119
+00:07:52,328 --> 00:07:58,560
+and get height, getHeight and if you're
+going to do.
+
+120
+00:07:58,560 --> 00:08:00,340
+If you're gonna literally treat this
+component like
+
+121
+00:08:00,340 --> 00:08:03,680
+a normal component and add children to it.
+
+122
+00:08:03,680 --> 00:08:07,760
+You should be aware that components can be
+opaque or not opaque.
+
+123
+00:08:07,760 --> 00:08:10,071
+And you have to kinda, if opaque is
+
+124
+00:08:10,071 --> 00:08:13,727
+false, that means that the background
+should show through.
+
+125
+00:08:13,727 --> 00:08:16,957
+And you have to think about that if you're
+gonna add child components.
+
+126
+00:08:16,957 --> 00:08:19,610
+But here, I just wanna create a black
+background.
+
+127
+00:08:19,610 --> 00:08:21,330
+And then draw shapes on it.
+
+128
+00:08:21,330 --> 00:08:24,312
+So I don't have to worry too much about
+the subtleties of this.
+
+129
+00:08:24,312 --> 00:08:29,710
+So I done g2.fillRect and that's gonna use
+the color that I've set.
+
+130
+00:08:29,710 --> 00:08:34,210
+And now, if I run this, you can see we've
+got a applet with a
+
+131
+00:08:34,210 --> 00:08:39,300
+black background, and now I can use that
+as a base for drawing other things.
+
+132
+00:08:39,300 --> 00:08:41,180
+And if you wanted this, for example, to be
+an
+
+133
+00:08:41,180 --> 00:08:45,530
+image, then, you could draw images here if
+you want.
+
+134
+00:08:45,530 --> 00:08:47,940
+But, probably the simplest thing to do
+might be to
+
+135
+00:08:47,940 --> 00:08:51,340
+just make this a panel instead of just a
+JComponent.
+
+136
+00:08:51,340 --> 00:08:54,360
+And then set the icon on it and for the
+icon pass the
+
+137
+00:08:54,360 --> 00:08:57,850
+image that you want to use and we covered
+that in previous tutorials.
+
+138
+00:08:57,850 --> 00:08:59,380
+But you can now draw all kinds of stuff
+
+139
+00:08:59,380 --> 00:09:01,310
+from there and do some animation if you
+want.
+
+140
+00:09:01,310 --> 00:09:02,880
+And we're gonna look into that.
+
+141
+00:09:04,160 --> 00:09:04,360
+Okay.
+
+142
+00:09:04,360 --> 00:09:08,159
+So that's it for this tutorial and until
+next time happy coding.
+
+143
+00:09:08,159 --> 00:09:11,059
+[BLANK_AUDIO]
+

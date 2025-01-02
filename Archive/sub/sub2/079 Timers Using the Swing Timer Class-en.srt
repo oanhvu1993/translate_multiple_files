@@ -1,0 +1,390 @@
+1
+00:00:01,970 --> 00:00:02,790
+Hello there.
+
+2
+00:00:02,790 --> 00:00:05,045
+This John from caveofprogram-,
+
+3
+00:00:05,045 --> 00:00:06,320
+programming.com.
+
+4
+00:00:06,320 --> 00:00:09,890
+And in this tutorial we're gonna look at
+the Swing timers.
+
+5
+00:00:09,890 --> 00:00:13,830
+So I'm gonna show you this within the
+context of applets, an applet.
+
+6
+00:00:13,830 --> 00:00:16,160
+But of course it has nothing to do with
+
+7
+00:00:16,160 --> 00:00:19,910
+applets this is just a convenient place to
+put it.
+
+8
+00:00:19,910 --> 00:00:26,210
+And so in my applet I've got this main
+fand I've got this main main.java
+
+9
+00:00:26,210 --> 00:00:31,920
+and I'm gonna give this class a private
+timer.
+
+10
+00:00:31,920 --> 00:00:37,240
+Not a J timer, but timer instance variable
+and I'll just call that timer.
+
+11
+00:00:37,240 --> 00:00:40,250
+And I'll add the import with Ctrl+Shift+O.
+
+12
+00:00:40,250 --> 00:00:42,422
+And you can see there are several timers
+here.
+
+13
+00:00:42,422 --> 00:00:46,794
+And you may want to use a java.util Timer,
+but there's a specializzed
+
+14
+00:00:46,794 --> 00:00:51,860
+one for Swing javax.swing Timer, so that's
+the one I'm going to use here.
+
+15
+00:00:51,860 --> 00:00:52,925
+So I'll double click that.
+
+16
+00:00:54,040 --> 00:01:00,220
+And in my init method, I'm gonna say timer
+equals new timer.
+
+17
+00:01:01,440 --> 00:01:05,590
+And the first parameter here is the time
+interval in milliseconds.
+
+18
+00:01:05,590 --> 00:01:11,730
+So let's just make this one, well maybe
+500th for the moment, 500 milliseconds.
+
+19
+00:01:11,730 --> 00:01:16,570
+And the second argument is a action
+listener.
+
+20
+00:01:16,570 --> 00:01:20,880
+And the action listener interface
+specifies an actionPerformed method.
+
+21
+00:01:20,880 --> 00:01:24,031
+And this timer will call that
+actionPerformed method
+
+22
+00:01:24,031 --> 00:01:26,910
+every time the timer the timer kind of
+runs.
+
+23
+00:01:27,910 --> 00:01:29,860
+So every 500 milliseconds in this case.
+
+24
+00:01:31,170 --> 00:01:36,050
+And I'm gonna pass in as my action my
+actionListener this.
+
+25
+00:01:36,050 --> 00:01:39,810
+In other words, the main class here.
+
+26
+00:01:39,810 --> 00:01:41,030
+And to make that work, I'll gonna have
+
+27
+00:01:41,030 --> 00:01:45,010
+to say that the main class implements
+actionListener.
+
+28
+00:01:45,010 --> 00:01:47,300
+Although, I could of course use an
+anonymous class here.
+
+29
+00:01:47,300 --> 00:01:49,490
+Let's just click the arrow here.
+
+30
+00:01:49,490 --> 00:01:52,550
+And it will say, yeah, import action
+listener.
+
+31
+00:01:52,550 --> 00:01:54,830
+Let's do that.
+
+32
+00:01:54,830 --> 00:01:59,220
+And then I can go to add unimplemented
+methods and it's gonna
+
+33
+00:01:59,220 --> 00:02:03,110
+add the actionPerformed method down here
+which would call by the timer.
+
+34
+00:02:03,110 --> 00:02:10,400
+Let's change that to E and this, this
+initial,
+
+35
+00:02:10,400 --> 00:02:12,950
+this value here is actually the initial
+delay as
+
+36
+00:02:12,950 --> 00:02:15,800
+well as the time interval, but the timer
+does
+
+37
+00:02:15,800 --> 00:02:19,840
+have methods that are actually set the two
+independently.
+
+38
+00:02:19,840 --> 00:02:22,800
+So you got set initially delay in set
+delay.
+
+39
+00:02:22,800 --> 00:02:26,970
+And you can say whether it repeats or not
+here.
+
+40
+00:02:26,970 --> 00:02:32,500
+So you can have a timer that only times
+like one interval if you want.
+
+41
+00:02:32,500 --> 00:02:35,900
+So there's a few useful a few useful
+things there.
+
+42
+00:02:37,380 --> 00:02:39,420
+But I'm not going to use them here.
+
+43
+00:02:39,420 --> 00:02:42,870
+What I am going to do is this is very
+important for
+
+44
+00:02:42,870 --> 00:02:47,210
+applets, but won't concern you if you're
+not working on an applet.
+
+45
+00:02:47,210 --> 00:02:51,360
+For an applet, in your start method,
+there, you need
+
+46
+00:02:51,360 --> 00:02:55,410
+to because in this case, I want this timer
+to run.
+
+47
+00:02:55,410 --> 00:02:58,660
+I want it to do some animation in my
+applet.
+
+48
+00:02:58,660 --> 00:03:02,960
+And applets must start in response to the
+start method.
+
+49
+00:03:02,960 --> 00:03:06,050
+So I'm going to say timer.start here,
+which actually starts the timer.
+
+50
+00:03:06,050 --> 00:03:09,970
+And this will be called by my applet
+becomes visible in the internet page.
+
+51
+00:03:09,970 --> 00:03:17,758
+And I'm gonna stop my timer whenever my
+stop methods called in my applet.
+
+52
+00:03:17,758 --> 00:03:20,670
+Cuz for applets, when your internet page
+with the
+
+53
+00:03:20,670 --> 00:03:22,950
+applet on loses focus, stop gets caught,
+and you
+
+54
+00:03:22,950 --> 00:03:26,450
+must make sure that your applet is not
+kind
+
+55
+00:03:26,450 --> 00:03:30,590
+of doing stuff and using CPU when it's
+stopped.
+
+56
+00:03:30,590 --> 00:03:35,300
+So these start and stop methods can be
+called multiple times for your applets.
+
+57
+00:03:35,300 --> 00:03:37,850
+And you you must respect them.
+
+58
+00:03:37,850 --> 00:03:39,380
+You must make sure that your app is not
+
+59
+00:03:39,380 --> 00:03:43,330
+doing any heavy processing when it's
+supposed to be stopped.
+
+60
+00:03:43,330 --> 00:03:46,150
+And, but if you're just interest in
+timers, the point
+
+61
+00:03:46,150 --> 00:03:48,340
+is here that you can start them and stop
+them.
+
+62
+00:03:48,340 --> 00:03:53,430
+And of course you have to start a timer to
+actually run it in the first place.
+
+63
+00:03:53,430 --> 00:03:55,170
+And now that's gonna call my
+actionPerformed
+
+64
+00:03:55,170 --> 00:03:58,630
+method once every 500 milliseconds in this
+case.
+
+65
+00:03:58,630 --> 00:04:02,660
+And just to see it running I'm gonna do a
+sysout here for the moment.
+
+66
+00:04:02,660 --> 00:04:06,260
+I'm gonna say timer running in here.
+
+67
+00:04:08,220 --> 00:04:12,680
+And now if I run this code as a
+
+68
+00:04:12,680 --> 00:04:16,310
+Java applet we can see that the timer is
+running.
+
+69
+00:04:16,310 --> 00:04:19,040
+I don't know if the start method, yeah, I
+think, in
+
+70
+00:04:19,040 --> 00:04:22,642
+eclipse I don't think I can make the start
+method get called.
+
+71
+00:04:22,642 --> 00:04:24,670
+But that's not so important.
+
+72
+00:04:26,240 --> 00:04:28,280
+So that's it for this tutorial.
+
+73
+00:04:28,280 --> 00:04:33,860
+Pretty simple to use timers, and in fact I
+should mention that nearly always
+
+74
+00:04:33,860 --> 00:04:39,310
+when you think you need multithreading in
+Swing, you probably need a timer instead.
+
+75
+00:04:39,310 --> 00:04:43,450
+And if you possibly can use a timer
+instead of multithreading
+
+76
+00:04:43,450 --> 00:04:47,610
+it's much less likely to cause your
+application to be slow.
+
+77
+00:04:47,610 --> 00:04:49,180
+And it's just much more elegant.
+
+78
+00:04:49,180 --> 00:04:53,535
+So timers a really good thing to use when,
+whenever you whenever you can and
+
+79
+00:04:53,535 --> 00:04:56,395
+whenever you need something that's, that's
+kind
+
+80
+00:04:56,395 --> 00:04:59,060
+of happening in the background so to
+speak.
+
+81
+00:04:59,060 --> 00:05:02,592
+So that's it for this tutorial and until
+next time happy coding.
+
+82
+00:05:02,592 --> 00:05:05,709
+[BLANK_AUDIO]
+

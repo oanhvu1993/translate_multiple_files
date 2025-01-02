@@ -1,8 +1,8 @@
 # TRANSLATE_MULTIPLE_FILES APPLICATION
 
-The lastest version is app_v1.2 and app_v2.2
+The lastest version is app_v1.3 and app_v2.2
 
-## With app_v1.2 we can:
+## With app_v1.3 we can:
 Give the whole content in srt file to AI to translate.
 The downside of it is some time it conflict with some symbol like \n and cause confusion for AI. Therefor it will return missing line sometime and cause the content shifted up or down.
 However with free AI key version, we can only give like under 10 requests every 2 minutes, this version seem to be the better one to use.

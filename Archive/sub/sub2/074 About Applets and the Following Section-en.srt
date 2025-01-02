@@ -1,0 +1,372 @@
+1
+00:00:01,020 --> 00:00:03,940
+Hello this is John from cave of programming to come.
+
+2
+00:00:03,950 --> 00:00:09,840
+I'm actually having this video I think about two years after recording this swing course.
+
+3
+00:00:10,140 --> 00:00:14,180
+And there are three things that I want to tell you about in this video.
+
+4
+00:00:14,190 --> 00:00:20,740
+The first is the applet support in browsers is even less good than it used to be.
+
+5
+00:00:20,760 --> 00:00:23,940
+I think the splits are really on the way out.
+
+6
+00:00:24,210 --> 00:00:29,140
+So in the code that I'm about to show you are going to cover animation.
+
+7
+00:00:29,250 --> 00:00:31,320
+I'm going to do it in the context of an Aplin.
+
+8
+00:00:31,470 --> 00:00:33,750
+And that's all going to work in Eclipse.
+
+9
+00:00:33,810 --> 00:00:38,990
+But there's one video where I show you how to deploy it they apply applet with h.t. email.
+
+10
+00:00:39,060 --> 00:00:46,710
+Now the Chrome browser I believe removes support for applets basically in April of this year which is
+
+11
+00:00:46,710 --> 00:00:48,600
+now 2015.
+
+12
+00:00:48,600 --> 00:00:53,320
+So you won't be able to get up to work on Chrome and it won't work on opera.
+
+13
+00:00:53,370 --> 00:00:55,110
+It should work on other browsers.
+
+14
+00:00:55,140 --> 00:01:00,260
+Although you may have to fiddle around with your security settings to get it to work.
+
+15
+00:01:00,590 --> 00:01:08,790
+And the only place where I've really ever seen applets used seriously is has been in in-house software
+
+16
+00:01:09,210 --> 00:01:17,040
+where people can control centrally the browsers that people are using and the security settings as well.
+
+17
+00:01:17,040 --> 00:01:23,400
+So the bottom line is this tutorial is still good it's still good for learning about animation especially
+
+18
+00:01:23,670 --> 00:01:28,520
+But when we come to that video on deploying applets he might want to consider skipping that.
+
+19
+00:01:28,530 --> 00:01:34,800
+Unless you envisage you might be developing an in-house applet some some day you know for use within
+
+20
+00:01:34,800 --> 00:01:39,570
+a company and then it's still hopefully relevant.
+
+21
+00:01:40,350 --> 00:01:45,740
+So what I'll do is just to kind of remedy that habit is at the end of this section.
+
+22
+00:01:45,750 --> 00:01:46,610
+I'll add a video.
+
+23
+00:01:46,620 --> 00:01:53,580
+It shows you how to turn this code into a desktop swing application and that's also quite a good thing
+
+24
+00:01:53,580 --> 00:01:57,330
+that you could have a go yourself if you want a little bit of a challenge which you should be able to
+
+25
+00:01:57,330 --> 00:01:57,920
+do.
+
+26
+00:01:58,140 --> 00:02:04,200
+If you follow this course so far so that the code that were going to see is going to work in Eclipse.
+
+27
+00:02:04,200 --> 00:02:09,960
+It's only that one video on deploying the apla that is potentially going to be tricky and if you're
+
+28
+00:02:09,960 --> 00:02:14,790
+using Chrome or opera it just won't work now unfortunately anymore.
+
+29
+00:02:15,310 --> 00:02:21,630
+So the other couple of things that I want to mention is that I have got a Mac computer now and when
+
+30
+00:02:21,630 --> 00:02:24,500
+I tried to run this coupler in the Mac.
+
+31
+00:02:24,840 --> 00:02:31,800
+So if I do this this is what it should look like so we should end up with this at the end of the course
+
+32
+00:02:32,150 --> 00:02:33,970
+and it's a ball bouncing off a bat.
+
+33
+00:02:34,140 --> 00:02:36,630
+But in fact let's just go back.
+
+34
+00:02:36,630 --> 00:02:38,980
+I found that it actually initially crashed.
+
+35
+00:02:39,060 --> 00:02:46,440
+So there's this game Java where were going to develop a sort of component that shows this bouncing ball
+
+36
+00:02:46,470 --> 00:02:49,060
+bouncing around sort of custom components.
+
+37
+00:02:49,290 --> 00:02:56,640
+And this has got in it some code for hiding the cursor and the way we do that is we create a blank image
+
+38
+00:02:56,700 --> 00:03:06,000
+and set that to be the cursor using this hidden cursor equals get toolkit create custom cursor thing.
+
+39
+00:03:06,000 --> 00:03:12,030
+Now the problem is that when you create a cursor you have to specify a hot spot and that's the spot
+
+40
+00:03:12,030 --> 00:03:18,990
+within the cursor image that actually clicks on things and originally in the code that you're going
+
+41
+00:03:18,990 --> 00:03:20,300
+to see in the following section.
+
+42
+00:03:20,310 --> 00:03:27,010
+I set that spot to be 1 1 and if you do that I discovered on a Mac it doesn't actually work.
+
+43
+00:03:27,030 --> 00:03:27,960
+Let's try that again.
+
+44
+00:03:27,960 --> 00:03:29,990
+Go to runouts what happens is it.
+
+45
+00:03:30,000 --> 00:03:37,170
+This is sort of blank the applet viewer from Eclipse and we get this sort of traceback an exception.
+
+46
+00:03:37,310 --> 00:03:42,240
+And if you look for the first line in here it's actually in code that that we've written that were going
+
+47
+00:03:42,240 --> 00:03:44,130
+to write in the following section.
+
+48
+00:03:44,130 --> 00:03:52,020
+It's right here on this line it creates the custom cursor and that can be fixed by setting the hotspot
+
+49
+00:03:52,170 --> 00:03:55,080
+to point zero zero.
+
+50
+00:03:55,130 --> 00:03:57,260
+Then it works.
+
+51
+00:03:57,300 --> 00:04:02,940
+So in theory swing ups are completely cross platform but it's true that sometimes they're not as crass
+
+52
+00:04:02,940 --> 00:04:04,700
+a cross platform as you'd like.
+
+53
+00:04:04,920 --> 00:04:12,780
+And if you really want to deploy swing application of any kind it is good practice to test it on all
+
+54
+00:04:12,780 --> 00:04:18,120
+the platforms all the different versions of operating systems that you might want to deploy it on which
+
+55
+00:04:18,120 --> 00:04:20,140
+unfortunately I can't do.
+
+56
+00:04:20,160 --> 00:04:25,830
+I used to have windows and I've got just Mac but this is the only thing I've discovered that really
+
+57
+00:04:25,830 --> 00:04:31,740
+doesn't work at least on this version of the Mac operating system.
+
+58
+00:04:31,740 --> 00:04:33,230
+So let's let's run that again now.
+
+59
+00:04:33,240 --> 00:04:34,600
+And now it's fine.
+
+60
+00:04:34,710 --> 00:04:41,490
+The other just little minor point is when I developed this program as you are going to see in the following
+
+61
+00:04:41,490 --> 00:04:42,410
+section.
+
+62
+00:04:42,570 --> 00:04:47,250
+We've got this bit where we've got like a bat that we use to bounce a ball around.
+
+63
+00:04:47,280 --> 00:04:54,720
+And originally when we detect an intersection of the ball with the bat I reverse the x and y direction
+
+64
+00:04:54,720 --> 00:04:55,630
+and the ball.
+
+65
+00:04:55,770 --> 00:04:59,930
+But that gives a very unnatural bounce because it means that the ball.
+
+66
+00:05:00,000 --> 00:05:06,920
+Bounces off at the same angle that it hit the baton like this which is which is a bit strange.
+
+67
+00:05:06,930 --> 00:05:08,560
+I don't know why I did that originally Really.
+
+68
+00:05:08,560 --> 00:05:13,560
+So to fix that if you don't improve that habit just comment out the pit of code that you're going to
+
+69
+00:05:13,560 --> 00:05:17,880
+see soon which reverses the x direction of the ball.
+
+70
+00:05:17,880 --> 00:05:20,990
+Only reverse the y direction when it hits the bat.
+
+71
+00:05:21,600 --> 00:05:23,250
+So that's that's it basically.
+
+72
+00:05:23,270 --> 00:05:27,730
+And so my suggestion is that you work through this code.
+
+73
+00:05:27,870 --> 00:05:34,170
+Get the applet running any clips you might want to skip the section on deploying applets because you
+
+74
+00:05:34,170 --> 00:05:38,550
+might you might see an applet if you're running in-house software within a company.
+
+75
+00:05:38,670 --> 00:05:42,470
+But other than that to be honest they're not really that much use.
+
+76
+00:05:42,510 --> 00:05:44,810
+And they've always been a bit rubbish.
+
+77
+00:05:44,820 --> 00:05:47,390
+You know they used to lock up your browser and stuff.
+
+78
+00:05:47,790 --> 00:05:53,310
+If you do want to deploy a job application on the Internet you can do it with Java Web start and then
+
+79
+00:05:53,310 --> 00:06:00,360
+it doesn't run within the browser or at least the way that works in all browsers won't run within the
+
+80
+00:06:00,360 --> 00:06:02,220
+browser on Chrome.
+
+81
+00:06:02,220 --> 00:06:07,830
+For example you have to download a little farm and click on it and that starts a job program on your
+
+82
+00:06:07,890 --> 00:06:09,860
+desktop.
+
+83
+00:06:09,900 --> 00:06:12,670
+That's kind of outside the scope of this tutorial.
+
+84
+00:06:12,690 --> 00:06:13,860
+It's a little bit involved.
+
+85
+00:06:13,860 --> 00:06:20,490
+You have to do some command line stuff a little bit to sign your jaw and to deploy it on the Internet.
+
+86
+00:06:20,490 --> 00:06:26,550
+You'd also have to pay for a certificate from a certificate authority so are not going to go into that
+
+87
+00:06:26,550 --> 00:06:31,380
+but if you did want to deployer Java out from the Internet that would probably be the best way to do
+
+88
+00:06:31,380 --> 00:06:31,530
+it.
+
+89
+00:06:31,530 --> 00:06:33,940
+And it's called Java Web start.
+
+90
+00:06:34,350 --> 00:06:40,590
+Okay so I'll leave it there for now and I'm going to add a extra video as well at the end of this section
+
+91
+00:06:40,650 --> 00:06:45,410
+on how to turn your apla into a Swingle that runs on the desktop.
+
+92
+00:06:45,640 --> 00:06:47,580
+Okay so until next time.
+
+93
+00:06:47,580 --> 00:06:49,230
+Happy coding.
+

@@ -1,0 +1,675 @@
+1
+00:00:01,690 --> 00:00:05,070
+Hello this is John from
+caveofprogamming.com.
+
+2
+00:00:05,070 --> 00:00:09,130
+And in this tutorial we're gonna look at
+the basics of animation in Swing.
+
+3
+00:00:09,130 --> 00:00:12,760
+So at the moment I've got this, it happens
+to be an applet actually.
+
+4
+00:00:13,900 --> 00:00:21,050
+And it's got these two shapes on it that
+are drawn by this game.java and
+
+5
+00:00:21,050 --> 00:00:26,150
+I've got this main kind of the equivalent
+of a main method.
+
+6
+00:00:26,150 --> 00:00:29,310
+But for an applet and in there, I've
+actually, I did
+
+7
+00:00:29,310 --> 00:00:34,650
+a timer which I've, I've changed to run
+ever 20 milliseconds.
+
+8
+00:00:34,650 --> 00:00:39,020
+But we look to that, like in the last
+tutorial.
+
+9
+00:00:39,020 --> 00:00:44,490
+And this timer is running this action four
+method and I'm going to
+
+10
+00:00:44,490 --> 00:00:47,940
+go to my game here, and I'm going to give
+my game class.
+
+11
+00:00:47,940 --> 00:00:53,420
+A method public void update and this
+update method is going to update
+
+12
+00:00:53,420 --> 00:00:57,890
+the positions of the shapes on my screen
+to make them move around.
+
+13
+00:00:59,430 --> 00:01:05,750
+Now in main, I'm just going to call here
+game.update
+
+14
+00:01:05,750 --> 00:01:10,130
+and in fact, let's take a look at where
+game actually is.
+
+15
+00:01:10,130 --> 00:01:16,210
+So I've got, yeah, I need to make game a
+field rather than just creating it here.
+
+16
+00:01:16,210 --> 00:01:21,220
+So here I'll get rid of that, Ctrl+X put
+in game there and at the top here let's
+
+17
+00:01:21,220 --> 00:01:28,240
+say private Game game and in, in it
+
+18
+00:01:28,240 --> 00:01:34,262
+I'm going to say and down here game equals
+new Game.
+
+19
+00:01:34,262 --> 00:01:37,130
+So I've got my game class it is on my
+drawing.
+
+20
+00:01:37,130 --> 00:01:42,740
+And I'm gonna call here in, in response to
+the timer I'm gonna call game.update.
+
+21
+00:01:42,740 --> 00:01:44,850
+And of course you know, if this wasn't an
+
+22
+00:01:44,850 --> 00:01:48,450
+applet you might even have to put the
+timer code.
+
+23
+00:01:48,450 --> 00:01:51,820
+And the class actually draws stuff but
+it's my preference.
+
+24
+00:01:51,820 --> 00:01:56,220
+The main pointer here is just that we've
+gotta call this update method regularly.
+
+25
+00:01:56,220 --> 00:01:58,780
+And now I'm gonna animate in this, in
+
+26
+00:01:58,780 --> 00:02:01,500
+this tutorial I'm gonna animate this
+ellipse which is
+
+27
+00:02:01,500 --> 00:02:03,260
+actually a little, kind of like a little
+ball
+
+28
+00:02:03,260 --> 00:02:05,820
+and I'm gonna make it bounce across the
+screen.
+
+29
+00:02:05,820 --> 00:02:07,120
+So, let's cut this from here and
+
+30
+00:02:09,130 --> 00:02:13,740
+I'll call that ball and I'm gonna put
+private instance variable in here.
+
+31
+00:02:15,510 --> 00:02:18,610
+So that's gonna be a type
+Ellipse2D.double.
+
+32
+00:02:18,610 --> 00:02:25,185
+So I'm gonna say private Ellipse2D.double
+ball equals new Ellipse2D.double.
+
+33
+00:02:27,180 --> 00:02:30,010
+And at the moment, I should run the same
+as it did before, so there we
+
+34
+00:02:30,010 --> 00:02:33,250
+go but now we can update the position
+
+35
+00:02:33,250 --> 00:02:37,030
+of that ball, whenever this update method
+runs.
+
+36
+00:02:37,030 --> 00:02:42,400
+So let's see, one thing that we need to
+
+37
+00:02:42,400 --> 00:02:47,510
+do is after it take runs we need to call
+repaint because
+
+38
+00:02:47,510 --> 00:02:49,564
+if you update the position on the ball but
+you
+
+39
+00:02:49,564 --> 00:02:53,599
+don't redraw the screen then absolutely
+nothing is going to happen.
+
+40
+00:02:54,660 --> 00:02:57,430
+So it's very important to call repaint and
+repaint actually
+
+41
+00:02:57,430 --> 00:03:02,600
+tells Swing to call paint component at the
+earliest possible opportunity.
+
+42
+00:03:02,600 --> 00:03:04,480
+So don't call paint component yourself.
+
+43
+00:03:04,480 --> 00:03:05,700
+'Cuz if you do that, you could end
+
+44
+00:03:05,700 --> 00:03:09,060
+up slowing down or locking up your
+application.
+
+45
+00:03:09,060 --> 00:03:10,760
+Call it repaint.
+
+46
+00:03:10,760 --> 00:03:16,380
+And that will trigger your, it will
+trigger Swing to call paint component.
+
+47
+00:03:16,380 --> 00:03:18,760
+And of course, this is absolutely the same
+for an applet
+
+48
+00:03:18,760 --> 00:03:22,560
+or any kind of swing application for
+desktop application or whatever.
+
+49
+00:03:22,560 --> 00:03:27,010
+The stuff I'm showing you here is not
+applet specific at all.
+
+50
+00:03:27,010 --> 00:03:31,520
+And so now lets say, lets have some code
+
+51
+00:03:31,520 --> 00:03:34,640
+here, in fact I'm gonna give the ball a
+speed.
+
+52
+00:03:34,640 --> 00:03:40,930
+Lets say private int speed equals
+
+53
+00:03:40,930 --> 00:03:45,667
+maybe I should make it a double, private
+double speed equals
+
+54
+00:03:45,667 --> 00:03:50,470
+10.0 and let's
+
+55
+00:03:50,470 --> 00:03:55,500
+also give it a a next direction and you'll
+see why shortly.
+
+56
+00:03:55,500 --> 00:04:00,640
+So private int xDirection.
+
+57
+00:04:01,910 --> 00:04:09,125
+Maybe, maybe I should say xDirection ball
+equals
+
+58
+00:04:09,125 --> 00:04:15,840
+1 and private int yDirection ball equals
+1.
+
+59
+00:04:18,010 --> 00:04:22,680
+Now to update the position of the ball in
+update here.
+
+60
+00:04:22,680 --> 00:04:31,130
+What I'm going to do, is I'm going to say
+ball.x here.
+
+61
+00:04:31,130 --> 00:04:37,530
+And I'm going to say plus equals if I can
+find the
+
+62
+00:04:37,530 --> 00:04:43,666
+plus on my keyboard, plus equals, Okay.
+
+63
+00:04:43,666 --> 00:04:51,750
+This equals xDirectionBall
+
+64
+00:04:51,750 --> 00:04:56,464
+which is 1 times
+
+65
+00:04:56,464 --> 00:04:58,830
+speed.
+
+66
+00:04:58,830 --> 00:05:02,830
+So, all I'm doing is adding on to the
+xDirection here.
+
+67
+00:05:02,830 --> 00:05:07,110
+And this, this doesn't have anything
+really to do with swing in itself.
+
+68
+00:05:07,110 --> 00:05:09,540
+The main point here is that I'm, I'm
+
+69
+00:05:09,540 --> 00:05:12,420
+literally just updating the position of
+the ball.
+
+70
+00:05:12,420 --> 00:05:16,870
+And then calling repaint, so that the ball
+will then get repainted.
+
+71
+00:05:16,870 --> 00:05:20,660
+The screen will get repainted and the ball
+at a different position in response
+
+72
+00:05:20,660 --> 00:05:24,440
+to a timer that I showed you how to use in
+the last tutorial.
+
+73
+00:05:24,440 --> 00:05:26,330
+And that's all you really need to know
+about animation,
+
+74
+00:05:26,330 --> 00:05:28,885
+but in case you're interested in seeing
+this actually work.
+
+75
+00:05:28,885 --> 00:05:34,435
+Work, then stick with me so let's do
+Ctrl+C then paste this in and let's update
+
+76
+00:05:34,435 --> 00:05:40,605
+the y position as well, y, there we go y
+
+77
+00:05:40,605 --> 00:05:46,272
+and that's gonna be yDirection or now.
+
+78
+00:05:46,272 --> 00:05:50,420
+I want make sure that the ball can't go
+off screen.
+
+79
+00:05:50,420 --> 00:05:55,758
+So I'll say if ball.x is less
+
+80
+00:05:55,758 --> 00:06:01,096
+than zero then ball well I'll
+
+81
+00:06:01,096 --> 00:06:07,630
+say xDirection ball equals 1.
+
+82
+00:06:07,630 --> 00:06:09,950
+So if it's less than zero, it must be
+because the ball's
+
+83
+00:06:09,950 --> 00:06:14,910
+been moving to the left and xDirection
+must be negative, speed is positive.
+
+84
+00:06:14,910 --> 00:06:20,170
+And so i'm going to change it back to
+positive, so the ball is moving the other
+
+85
+00:06:20,170 --> 00:06:26,851
+way and I probably also want to say
+ball.x.
+
+86
+00:06:26,851 --> 00:06:32,930
+In fact, yeah, I think it'll work, ball.x
+equals 0,
+
+87
+00:06:32,930 --> 00:06:34,600
+just to make sure it can't go off the
+screen here.
+
+88
+00:06:35,600 --> 00:06:38,250
+And I also want to detect the case where
+the
+
+89
+00:06:38,250 --> 00:06:42,100
+ball is off the screen on the right hand
+side.
+
+90
+00:06:42,100 --> 00:06:49,260
+So that's going to be else if ball.y is
+greater than
+
+91
+00:06:52,120 --> 00:06:57,671
+and it's gonna be, if it's greater than,
+getWidth because
+
+92
+00:06:57,671 --> 00:07:03,850
+getWidth is gonna be the width of my, my
+game component.
+
+93
+00:07:03,850 --> 00:07:09,794
+Which is JComponent so I'm calling the
+JComponent message here getWidth.
+
+94
+00:07:09,794 --> 00:07:13,713
+getWidth and I need to say negative
+
+95
+00:07:13,713 --> 00:07:20,041
+ball.getBounds.width because
+
+96
+00:07:20,041 --> 00:07:25,840
+I wanna make sure that the right hand edge
+of th ball does not go off the screen and
+
+97
+00:07:25,840 --> 00:07:32,087
+this gives me the width of the ball that
+I've set in my shape.
+
+98
+00:07:32,087 --> 00:07:37,642
+Up here, I think it's that one and so that
+
+99
+00:07:37,642 --> 00:07:43,960
+should do the trick so if so I meant to
+say x here that should be x.
+
+100
+00:07:43,960 --> 00:07:48,800
+So if the position of the ball is so far
+to the right, that the right
+
+101
+00:07:48,800 --> 00:07:54,190
+edge of the ball is gonna be off the
+screen then I wanna say xDirectionBall
+
+102
+00:07:54,190 --> 00:07:59,300
+equals negative 1 to make it then move to
+the, to
+
+103
+00:07:59,300 --> 00:08:04,022
+the left and I also probably wanna say
+
+104
+00:08:04,022 --> 00:08:09,080
+ball.x equals,
+
+105
+00:08:09,080 --> 00:08:11,170
+equals all this stuff here.
+
+106
+00:08:12,620 --> 00:08:15,140
+I think, I think that will be okay.
+
+107
+00:08:15,140 --> 00:08:15,770
+We'll check.
+
+108
+00:08:17,240 --> 00:08:19,780
+And now I've gotta do the same again for
+
+109
+00:08:19,780 --> 00:08:23,810
+the y component, so let's just copy and
+paste that.
+
+110
+00:08:23,810 --> 00:08:29,130
+And let's change the full coordinates to
+y.
+
+111
+00:08:30,850 --> 00:08:33,260
+Let's change the x direction to-
+
+112
+00:08:33,260 --> 00:08:34,040
+well, not that one.
+
+113
+00:08:34,040 --> 00:08:37,090
+It's so easy to get confused with this
+kind of stuff.
+
+114
+00:08:37,090 --> 00:08:41,066
+I find, so let's change the, the
+directions to y.
+
+115
+00:08:41,066 --> 00:08:45,850
+Got ball.y and yDirectionBall and let's
+change all of
+
+116
+00:08:45,850 --> 00:08:51,220
+the heights, all of the widths to heights,
+so this should be,
+
+117
+00:08:53,800 --> 00:08:55,399
+there we go this should be get height.
+
+118
+00:08:57,000 --> 00:09:01,570
+And this should be height and this should
+height.
+
+119
+00:09:03,020 --> 00:09:06,390
+And I think this now looks okay and I'm
+
+120
+00:09:06,390 --> 00:09:08,150
+gonna run this and it's not gonna look
+very
+
+121
+00:09:08,150 --> 00:09:13,220
+good for reasons I'll explain in the next
+tutorial
+
+122
+00:09:13,220 --> 00:09:16,840
+but it should basically animate If I've
+got this right.
+
+123
+00:09:16,840 --> 00:09:17,685
+Let's run it and see.
+
+124
+00:09:17,685 --> 00:09:22,040
+[LAUGH]
+And then the ball disappeared off the
+
+125
+00:09:22,040 --> 00:09:29,840
+lower edge meaning that the y got too
+great and I'm not
+
+126
+00:09:29,840 --> 00:09:35,040
+really sure why because, oh yeah, I've
+got, I've got a getWidth still in there.
+
+127
+00:09:37,940 --> 00:09:42,833
+So if the ball.y is greater than the
+
+128
+00:09:42,833 --> 00:09:48,217
+height minus the height of the ball then
+
+129
+00:09:48,217 --> 00:09:54,570
+change the y direction to minus 0 there.
+
+130
+00:09:54,570 --> 00:09:59,650
+So then the ball should be travelling up
+because y increases downwards.
+
+131
+00:09:59,650 --> 00:10:01,180
+And I
+
+132
+00:10:03,730 --> 00:10:05,460
+think that should be okay right?
+
+133
+00:10:05,460 --> 00:10:07,160
+Let's run it again.
+
+134
+00:10:07,160 --> 00:10:14,490
+There we go, now my ball is bouncing
+nicely around my screen.
+
+135
+00:10:14,490 --> 00:10:18,980
+I'm just wondering actually if there's any
+scope here for the ball to get stuck
+
+136
+00:10:18,980 --> 00:10:26,570
+because I'm saying that if the, if ball.y
+is less than 0, set it to 0.
+
+137
+00:10:26,570 --> 00:10:29,690
+Yeah that's okay and then next time yeah
+this is fine.
+
+138
+00:10:29,690 --> 00:10:31,390
+Okay so now I've got my ball bouncing
+around.
+
+139
+00:10:31,390 --> 00:10:34,550
+It's not too smooth but we're gonna take a
+look shortly
+
+140
+00:10:34,550 --> 00:10:38,500
+at double buffering which can make the
+animation a bit smoother.
+
+141
+00:10:38,500 --> 00:10:42,330
+And in future tutorials we're also gonna
+animate this, this thing here which
+
+142
+00:10:42,330 --> 00:10:46,110
+is gonna be like a bat which the ball will
+then bounce off.
+
+143
+00:10:46,110 --> 00:10:47,210
+So that's it for this tutorial.
+
+144
+00:10:47,210 --> 00:10:50,030
+And until next time, happy coding.
+

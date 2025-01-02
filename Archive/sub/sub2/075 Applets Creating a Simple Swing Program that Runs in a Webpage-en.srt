@@ -1,0 +1,362 @@
+1
+00:00:01,550 --> 00:00:05,500
+Hello this is John from
+caveofprogamming.com.
+
+2
+00:00:05,500 --> 00:00:09,190
+In this tutorial, we're gonna change tack
+completely, because there's
+
+3
+00:00:09,190 --> 00:00:13,520
+a few little things left that I still
+wanna show you.
+
+4
+00:00:13,520 --> 00:00:16,875
+And I'm gonna show you how to put together
+an applet here,
+
+5
+00:00:16,875 --> 00:00:20,380
+and we're gonna use lots of context for
+the last few things.
+
+6
+00:00:20,380 --> 00:00:24,632
+But most of the stuff I show you here,
+applies to any
+
+7
+00:00:24,632 --> 00:00:28,500
+swing application and you can use it in
+any kinda swing application.
+
+8
+00:00:28,500 --> 00:00:31,060
+And equally the stuff I've showed you
+before,
+
+9
+00:00:31,060 --> 00:00:34,130
+can nearly all be used in applets as well.
+
+10
+00:00:34,130 --> 00:00:38,740
+So applets are they are kind of
+applications
+
+11
+00:00:38,740 --> 00:00:41,600
+that you can embed in a web page.
+
+12
+00:00:41,600 --> 00:00:45,150
+And often people choose to use Flash
+rather than Java for
+
+13
+00:00:45,150 --> 00:00:49,210
+that these days, but it's used useful,
+[LAUGH] I almost said useless.
+
+14
+00:00:49,210 --> 00:00:52,520
+But it's a useful thing to know in case
+you need to know it.
+
+15
+00:00:52,520 --> 00:00:55,530
+And they are still used and they are still
+useful.
+
+16
+00:00:56,690 --> 00:01:00,740
+But a disadvantage of a applet over Flash
+is that if
+
+17
+00:01:00,740 --> 00:01:03,430
+you have an applet embedded in a web page
+you'll see
+
+18
+00:01:03,430 --> 00:01:06,540
+an error, well not error but a warning at
+the top
+
+19
+00:01:06,540 --> 00:01:08,850
+of your browser that says do you want to
+run this applet.
+
+20
+00:01:08,850 --> 00:01:12,386
+And it's kinda just annoying to have to,
+you
+
+21
+00:01:12,386 --> 00:01:15,580
+know, to have to show that error to users.
+
+22
+00:01:15,580 --> 00:01:17,540
+So if, I think for that reason, more than
+any
+
+23
+00:01:17,540 --> 00:01:21,750
+other, applets aren't massively popular,
+but they could be useful.
+
+24
+00:01:24,250 --> 00:01:27,410
+So let's right click the project folder
+here, and I'm
+
+25
+00:01:27,410 --> 00:01:30,770
+gonna go to a New, we're gonna create a
+new class.
+
+26
+00:01:30,770 --> 00:01:34,180
+And I'll just call this Main, and click
+Finish.
+
+27
+00:01:35,210 --> 00:01:37,930
+Now, I'm gonna make main extend.
+
+28
+00:01:39,350 --> 00:01:42,020
+Extend JApplet.
+
+29
+00:01:42,020 --> 00:01:45,170
+So applets don't have to be Swing based,
+but they can be.
+
+30
+00:01:45,170 --> 00:01:49,480
+And this one is going to be, cuz this is a
+Swing tutorial series.
+
+31
+00:01:49,480 --> 00:01:52,150
+I'm gonna do Ctrl+Shift over to add the
+import.
+
+32
+00:01:53,485 --> 00:01:54,867
+and, and click Save.
+
+33
+00:01:54,867 --> 00:01:59,140
+Now JApplet has a bunch of methods that
+you will want
+
+34
+00:01:59,140 --> 00:02:02,020
+to override, or at least you'll want to
+override some of them.
+
+35
+00:02:02,020 --> 00:02:05,169
+And let's have a look at some of the most
+important ones in this tutorial.
+
+36
+00:02:05,169 --> 00:02:10,300
+So I've right-clicked there and I go to
+Source > Override Implement Methods.
+
+37
+00:02:10,300 --> 00:02:13,979
+Please excuse the sound of the workmen
+working across the road here.
+
+38
+00:02:15,670 --> 00:02:21,100
+And I'm gonna go, let's, there's a lot of
+messages here, a lot of methods here, that
+
+39
+00:02:21,100 --> 00:02:26,580
+you could over ride, but there's about
+four that are particularly important.
+
+40
+00:02:26,580 --> 00:02:28,330
+I think the swing specific ones, are
+
+41
+00:02:28,330 --> 00:02:30,890
+generally you can probably usually leave
+them alone.
+
+42
+00:02:30,890 --> 00:02:36,710
+If you go into Applet here, its JApplet
+derives or extends applet.
+
+43
+00:02:38,680 --> 00:02:42,220
+We've got a we've got an init method.
+
+44
+00:02:42,220 --> 00:02:46,610
+Init is where you do any initialization
+that you have to in your applet.
+
+45
+00:02:46,610 --> 00:02:49,650
+So it's kind of like a constructor, but
+rather than doing
+
+46
+00:02:49,650 --> 00:02:53,600
+initialization in a constructor, for an
+applet, you do it in init.
+
+47
+00:02:53,600 --> 00:02:56,888
+And, and that's called when the applet's
+kinda sat up.
+
+48
+00:02:56,888 --> 00:03:01,190
+And you would connect to a database in
+init, as well if you want to.
+
+49
+00:03:01,190 --> 00:03:04,330
+And if you have to destroy anything, like
+you have to
+
+50
+00:03:04,330 --> 00:03:07,310
+close the database connection or anything,
+you do it and destroy.
+
+51
+00:03:09,000 --> 00:03:12,350
+And there's also a start method.
+
+52
+00:03:12,350 --> 00:03:17,800
+Start is called whenever your upload is
+displayed and if the user
+
+53
+00:03:17,800 --> 00:03:23,070
+goes to different internet page, browses
+away from the upload, stop will be called.
+
+54
+00:03:23,070 --> 00:03:27,250
+So if your applet has to run, in any
+sense, you, like for example if you've got
+
+55
+00:03:27,250 --> 00:03:32,830
+a timer or a game loop, you wanna start it
+running in start, and you wanna stop it.
+
+56
+00:03:32,830 --> 00:03:37,020
+Whenever stop is called and then it starts
+cold again you wanna restart it.
+
+57
+00:03:37,020 --> 00:03:42,760
+So, we're gonna just work with these four,
+I think and this tutorials.
+
+58
+00:03:44,542 --> 00:03:47,220
+so, let's just for, for a moment.
+
+59
+00:03:47,220 --> 00:03:49,371
+Let's just put some sysout in there and
+we'll
+
+60
+00:03:49,371 --> 00:03:51,570
+look into this and get more detail in
+future.
+
+61
+00:03:51,570 --> 00:03:56,700
+So sysout there we go.
+
+62
+00:03:56,700 --> 00:04:01,254
+All right init, lets just copy that.
+
+63
+00:04:01,254 --> 00:04:06,134
+And let's put destroy, destroy.
+
+64
+00:04:06,134 --> 00:04:10,470
+And in here I'll have start and in here of
+course stop.
+
+65
+00:04:12,690 --> 00:04:16,930
+Now, we're gonna to look up how to embed
+this in a webpage, but,
+
+66
+00:04:16,930 --> 00:04:22,030
+for the moment, to test your applet, you
+can just click run like this.
+
+67
+00:04:22,030 --> 00:04:23,330
+And this is your applet running.
+
+68
+00:04:23,330 --> 00:04:24,870
+There is nothing to see at the moment.
+
+69
+00:04:24,870 --> 00:04:28,113
+You can see that init has been called.
+
+70
+00:04:28,113 --> 00:04:32,049
+It was called first of all, and then start
+is called, and
+
+71
+00:04:32,049 --> 00:04:36,889
+then, if I quit this applet, we're gonna
+get stop and then destroy.
+
+72
+00:04:37,950 --> 00:04:40,040
+And stop, bear in mind that start and stop
+can be
+
+73
+00:04:40,040 --> 00:04:44,660
+called multiple times by the applets in
+business, so to speak.
+
+74
+00:04:44,660 --> 00:04:46,800
+So that's it for this tutorial; join me
+
+75
+00:04:46,800 --> 00:04:49,757
+again next time and until next time, happy
+coding.
+
+76
+00:04:49,757 --> 00:04:50,017
+[NOISE]
+

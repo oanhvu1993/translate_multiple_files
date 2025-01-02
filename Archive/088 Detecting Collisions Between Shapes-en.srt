@@ -1,0 +1,349 @@
+1
+00:00:01,680 --> 00:00:06,590
+Hello, this is John from
+caveofprogramming.com and in this tutorial
+
+2
+00:00:06,590 --> 00:00:12,770
+we're gonna look at handling intersections
+between shapes.
+
+3
+00:00:12,770 --> 00:00:16,750
+So we're gonna look at how you can find
+out if two shapes intersect.
+
+4
+00:00:16,750 --> 00:00:19,860
+Now in this case I've got here, I've got
+an ellipse
+
+5
+00:00:19,860 --> 00:00:24,310
+2D, which I've called ball, and around it
+rectangle 2D, which I've
+
+6
+00:00:24,310 --> 00:00:27,530
+called bat, and I wanna check if those two
+things intersect,
+
+7
+00:00:27,530 --> 00:00:30,340
+because I wanna be able to hit my ball
+with my bat.
+
+8
+00:00:30,340 --> 00:00:32,655
+So if I run this, at the moment it looks
+like this.
+
+9
+00:00:34,620 --> 00:00:38,040
+Now shapes have a whole load of useful
+methods here, and I'm gonna
+
+10
+00:00:38,040 --> 00:00:43,380
+go to my this game component I've created
+has an update method where
+
+11
+00:00:43,380 --> 00:00:49,950
+it checks like every 20 milliseconds or
+something if my ball has gone
+
+12
+00:00:49,950 --> 00:00:54,200
+off the edge of the screen and reverses
+it's direction if it has.
+
+13
+00:00:54,200 --> 00:00:56,330
+So, in this update method I'm gonna add a
+
+14
+00:00:57,450 --> 00:01:02,280
+lets maximize the editor here, I'm gonna
+add if or.intersect.
+
+15
+00:01:02,280 --> 00:01:04,670
+In fact I just want to show you this
+
+16
+00:01:04,670 --> 00:01:08,400
+whole bunch of useful methods on these
+shapes, including contains.
+
+17
+00:01:08,400 --> 00:01:11,120
+So like for example if you get a point
+back from your
+
+18
+00:01:11,120 --> 00:01:15,530
+mouse you can say does, is that point
+contained by some shape.
+
+19
+00:01:15,530 --> 00:01:19,280
+And you can find out if someone's clicked
+on a particular shape for example.
+
+20
+00:01:19,280 --> 00:01:22,840
+So there's a bunch of really useful
+methods, and I'm going to use this
+
+21
+00:01:22,840 --> 00:01:28,260
+intersects, intersects methods, method
+which checks if
+
+22
+00:01:28,260 --> 00:01:31,700
+this shape intersects a rectangle 2D
+shape.
+
+23
+00:01:33,170 --> 00:01:35,030
+Now, I'm not using for my bar to
+
+24
+00:01:35,030 --> 00:01:38,920
+rectangle two, rectangle 2D, I'm using a
+rounded rectan-,
+
+25
+00:01:38,920 --> 00:01:42,000
+rectangle 2D or is it called round
+rectangle?
+
+26
+00:01:42,000 --> 00:01:44,760
+Yeah, it's called RoundRectangle 2D.
+
+27
+00:01:44,760 --> 00:01:51,520
+So I'm gonna, what I'm gonna do is, I'll
+say ball.insects bat.get
+
+28
+00:01:51,520 --> 00:01:57,050
+bounds 2D, which returns a rectangle 2D,
+that bounds the kind of rounded shape.
+
+29
+00:01:58,580 --> 00:02:00,710
+And I'm gonna say that if the ball
+intersects that.
+
+30
+00:02:00,710 --> 00:02:03,790
+Now what I want to do is I wanna reverse
+
+31
+00:02:03,790 --> 00:02:07,460
+the direction of the ball if it intersects
+the bat.
+
+32
+00:02:08,610 --> 00:02:14,970
+So I wanna say, like got its next
+direction ball and I wanna say.
+
+33
+00:02:14,970 --> 00:02:19,190
+And that's gonna be equal to, that's
+either equal to minus 1 or plus 1.
+
+34
+00:02:19,190 --> 00:02:28,543
+So I wanna equals x direction ball and
+just put a negative sign in front of that.
+
+35
+00:02:28,543 --> 00:02:34,601
+And do the same for the y direction to
+kind of give
+
+36
+00:02:34,601 --> 00:02:40,301
+an illusion at least of the ball bouncing
+off the bat.
+
+37
+00:02:40,301 --> 00:02:42,406
+But now if if I do it like this, there's
+a,
+
+38
+00:02:42,406 --> 00:02:44,935
+there's a risk that the ball could get
+stuck on the bat.
+
+39
+00:02:44,935 --> 00:02:46,885
+'Cuz it will reverse the direction.
+
+40
+00:02:46,885 --> 00:02:49,130
+'Cuz it's found that the ball is
+intersecting the bat.
+
+41
+00:02:50,450 --> 00:02:53,080
+But then, it's the next update, 20
+milliseconds later, it
+
+42
+00:02:53,080 --> 00:02:58,370
+will say, okay it's still intersecting
+potentially, reverse the direction again.
+
+43
+00:02:58,370 --> 00:02:59,521
+And the ball got stuck there.
+
+44
+00:02:59,521 --> 00:03:05,912
+So to take care of that I'm gonna add a
+private instance variable up here.
+
+45
+00:03:05,912 --> 00:03:12,660
+Private boolean check, enter,
+enterSection,
+
+46
+00:03:12,660 --> 00:03:17,510
+and let's set that initially to true.
+
+47
+00:03:19,750 --> 00:03:27,700
+And then I'm gonna say okay if if check
+intersection, so if the
+
+48
+00:03:27,700 --> 00:03:33,590
+ball intersects the bat, and if checked
+intersection, then I do all that stuff.
+
+49
+00:03:33,590 --> 00:03:36,810
+I reverse the direction of the ball.
+
+50
+00:03:36,810 --> 00:03:43,652
+And once the direction of the ball has
+been reversed I'm gonna say, okay, don't
+
+51
+00:03:43,652 --> 00:03:50,119
+check it anymore, say check intersection
+equals, whoops, equals false.
+
+52
+00:03:50,119 --> 00:03:55,317
+And then, check intersection is not gonna
+be set to true until it's
+
+53
+00:03:55,317 --> 00:04:01,080
+not longer until the ball and bat are no
+longer intersecting, so.
+
+54
+00:04:01,080 --> 00:04:03,760
+And this L which means that this board
+does not
+
+55
+00:04:03,760 --> 00:04:07,331
+intersect the bar I'm gonna say check
+intersection equals true.
+
+56
+00:04:09,000 --> 00:04:11,390
+So it only checks when it's found that the
+ball
+
+57
+00:04:11,390 --> 00:04:14,900
+is clear of the bat and then it will check
+once,
+
+58
+00:04:14,900 --> 00:04:17,460
+reverse the direction of the ball, and
+then say, okay, don't
+
+59
+00:04:17,460 --> 00:04:20,002
+check it any more until it's clear of the
+bat again.
+
+60
+00:04:21,355 --> 00:04:27,755
+Now lets run that, and with a bit of luck
+I can now bounce the ball off the bat.
+
+61
+00:04:27,755 --> 00:04:32,725
+Let's see this is very difficult and there
+we go, there we go, very nice.
+
+62
+00:04:32,725 --> 00:04:38,541
+Okay, so have fun with that and that's the
+last tutorial in this series.
+
+63
+00:04:38,541 --> 00:04:43,941
+But if you would like to know, if there's
+some topic that I haven't covered
+
+64
+00:04:43,941 --> 00:04:48,650
+that you would like to know more about,
+feel free to send me a message.
+
+65
+00:04:48,650 --> 00:04:50,710
+I can't make any promises, but I may well
+
+66
+00:04:50,710 --> 00:04:55,900
+add an appendix that covers a few more
+topics.
+
+67
+00:04:55,900 --> 00:05:01,830
+So that's it for this, and enjoy your new
+found Swing programming skills.
+
+68
+00:05:01,830 --> 00:05:04,560
+Thank you very much for watching my
+course.
+
+69
+00:05:05,580 --> 00:05:08,240
+You can find other stuff by me much of it
+for
+
+70
+00:05:08,240 --> 00:05:10,935
+free, on YouTube and on
+
+71
+00:05:10,935 --> 00:05:14,490
+caveopprogramming.com, which is all one
+word.
+
+72
+00:05:14,490 --> 00:05:20,670
+My name's John and as I say at the end of
+every tutorial, happy coding.
+

@@ -21,6 +21,7 @@ async function translateAllSrtFilesInFolder(path, lang) {
 
     ////////////////Commit action translate//////////////////
     for (const item of srtFiles) {
+        console.log(`Translating file: ${item}`)
         // retrieve content in srt file
         const content = fs.readFileSync(`${path}/${item}`, 'utf-8');
         // transalte and put in new folder

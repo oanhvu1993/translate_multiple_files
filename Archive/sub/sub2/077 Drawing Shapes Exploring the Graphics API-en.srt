@@ -1,0 +1,530 @@
+1
+00:00:01,990 --> 00:00:05,750
+Hello, this is John from
+caveofprogramming.com.
+
+2
+00:00:05,750 --> 00:00:09,290
+And in this tutorial we're gonna look at
+drawing shapes.
+
+3
+00:00:09,290 --> 00:00:11,980
+So we're gonna explore the graphics API
+just a little bit.
+
+4
+00:00:13,070 --> 00:00:16,640
+And in the moment we've got this applet.
+
+5
+00:00:16,640 --> 00:00:24,740
+And I'm gonna stop by just re-sizing it up
+a bit, let's go to
+
+6
+00:00:24,740 --> 00:00:31,490
+main here, and in, in it, I'm gonna say
+here set, size.
+
+7
+00:00:31,490 --> 00:00:37,980
+And let's set it to maybe 600 by 500, that
+should be a good size to work with.
+
+8
+00:00:39,580 --> 00:00:40,600
+Run that.
+
+9
+00:00:40,600 --> 00:00:41,440
+There we go, that's better.
+
+10
+00:00:43,150 --> 00:00:46,130
+Okay, so I'm going to go to, I'm at my
+game component here.
+
+11
+00:00:46,130 --> 00:00:49,970
+And, I'm going to work with this
+paintComponent method.
+
+12
+00:00:49,970 --> 00:00:54,360
+And I'm going to add just a couple of
+shapes in here.
+
+13
+00:00:54,360 --> 00:00:57,161
+So, to, to add shapes, you basically need
+
+14
+00:00:57,161 --> 00:01:00,438
+to, well firstly, you'll want to set the
+color.
+
+15
+00:01:00,438 --> 00:01:04,770
+So I want to say g2 dot, let's move this
+out here.
+
+16
+00:01:04,770 --> 00:01:06,860
+So those two lines need to go together cuz
+we're
+
+17
+00:01:06,860 --> 00:01:10,190
+setting the background color here and then
+filling the background.
+
+18
+00:01:11,360 --> 00:01:15,080
+And then I want to say g2.setColor.
+
+19
+00:01:15,080 --> 00:01:18,490
+And let's have a red sphere here.
+
+20
+00:01:18,490 --> 00:01:22,050
+And so I'll say setColor, Color.red, red.
+
+21
+00:01:24,170 --> 00:01:27,280
+And I'm gonna use a method called g2.fill.
+
+22
+00:01:27,280 --> 00:01:32,160
+And there's also g2.draw.
+
+23
+00:01:32,160 --> 00:01:35,250
+And I want to draw a circle and I want my
+
+24
+00:01:35,250 --> 00:01:38,220
+circle in this case to be filled, all the
+way through.
+
+25
+00:01:38,220 --> 00:01:39,233
+So I'll use Fill.
+
+26
+00:01:39,233 --> 00:01:41,958
+If I just wanted to draw literally a
+circle, like
+
+27
+00:01:41,958 --> 00:01:44,290
+the edge of a circle then I would use
+draw.
+
+28
+00:01:45,290 --> 00:01:48,060
+And now, I'm gonna tell it to draw a
+shape.
+
+29
+00:01:48,060 --> 00:01:52,961
+So I'm gonna create a new shape here and
+the type of
+
+30
+00:01:52,961 --> 00:01:58,341
+shape that I'm gonna use is, it's Ellipse
+2D.
+
+31
+00:01:58,341 --> 00:02:02,843
+And it's actually an inner class of the
+Ellipse 2D class.
+
+32
+00:02:02,843 --> 00:02:06,471
+Called double, that allows you to supply,
+
+33
+00:02:06,471 --> 00:02:10,810
+double precision arguments for the Ellipse
+parameters.
+
+34
+00:02:12,900 --> 00:02:17,310
+So the, let's see, let's just add the
+input there for Ellipse 2D.
+
+35
+00:02:17,310 --> 00:02:20,970
+And maybe we can bring up some more help
+information.
+
+36
+00:02:20,970 --> 00:02:25,090
+So we basically go the x, y, width and
+height of this Ellipse.
+
+37
+00:02:25,090 --> 00:02:27,160
+For x, I'm just gonna put in 100.
+
+38
+00:02:27,160 --> 00:02:29,980
+This is pixels, and y100.
+
+39
+00:02:29,980 --> 00:02:34,590
+This is pixels and the y measures from the
+top of the screen down.
+
+40
+00:02:34,590 --> 00:02:39,240
+And, since it's say, gonna be a, a circle,
+I'm gonna make.
+
+41
+00:02:40,320 --> 00:02:46,689
+Let's make this maybe, I don't know, 15 by
+15, so 15 high and 15 wide.
+
+42
+00:02:48,320 --> 00:02:51,410
+And if I run this, there's my circle.
+
+43
+00:02:53,190 --> 00:02:56,950
+And it doesn't look very nice at all, at
+the moment.
+
+44
+00:02:56,950 --> 00:02:58,550
+And one thing I can do
+
+45
+00:03:00,720 --> 00:03:04,390
+is to turn on antia, antialiasing.
+
+46
+00:03:04,390 --> 00:03:14,061
+And the way to do that is on your graphics
+2D, say g2.setAddRendering.
+
+47
+00:03:14,061 --> 00:03:21,280
+Not AddRendering in, I want
+setRenderingHint, that's the one.
+
+48
+00:03:21,280 --> 00:03:27,420
+And I need here, so rendering hint have
+like keys and values.
+
+49
+00:03:27,420 --> 00:03:32,330
+And the key here is going to be
+renderingHints.
+
+50
+00:03:32,330 --> 00:03:37,450
+Let's add the import there, dot, or maybe
+it's renderingHint.
+
+51
+00:03:37,450 --> 00:03:39,310
+Yeah, there we go, RenderingHints.
+
+52
+00:03:39,310 --> 00:03:44,884
+And I want to turn on anti-aliasing so
+I'll say KEY_ANTIALIASING here
+
+53
+00:03:44,884 --> 00:03:50,730
+and the values going to be
+RenderingHints.value.
+
+54
+00:03:50,730 --> 00:03:55,000
+So you see, see this is instruction in
+keys and values.
+
+55
+00:03:55,000 --> 00:03:57,920
+And I wanna set anti-alias on.
+
+56
+00:03:57,920 --> 00:03:59,924
+I don't know quite why it's got this
+strange syntax.
+
+57
+00:03:59,924 --> 00:04:02,090
+But that's how it works.
+
+58
+00:04:02,090 --> 00:04:04,420
+And if, if I run that now, you can see
+
+59
+00:04:04,420 --> 00:04:07,230
+that it really does look like a nice
+little circle there.
+
+60
+00:04:08,722 --> 00:04:11,835
+Let's add one more shape for this
+tutorial.
+
+61
+00:04:11,835 --> 00:04:19,266
+Let's say g2.setColor, color Color.blue.
+
+62
+00:04:19,266 --> 00:04:25,197
+And I'll say g2.draw and so the, not
+
+63
+00:04:25,197 --> 00:04:31,140
+draw actually fill, I'm gonna use fill
+again.
+
+64
+00:04:32,550 --> 00:04:36,130
+And draw and fill both take a shape.
+
+65
+00:04:36,130 --> 00:04:39,370
+And Ellipse2D.Double is a type of shape.
+
+66
+00:04:39,370 --> 00:04:43,120
+And there is actually a line shape that
+you can use.
+
+67
+00:04:43,120 --> 00:04:48,580
+So line 2D, but what I'm gonna use is, and
+there may well be other shapes.
+
+68
+00:04:48,580 --> 00:04:55,030
+I'm not sure, but usually use line ellipse
+and a rectangle.
+
+69
+00:04:55,030 --> 00:05:00,065
+And here I'm gonna use actually rounded
+
+70
+00:05:00,065 --> 00:05:05,842
+rect, rounded, I think it's called rounded
+
+71
+00:05:05,842 --> 00:05:10,743
+rect, RoundRectangle2D.Double.
+
+72
+00:05:10,743 --> 00:05:12,725
+Let's just see if I can add the input
+there.
+
+73
+00:05:12,725 --> 00:05:18,509
+Ctrl + Shift + o, and let's just call
+let's just call it round rect
+
+74
+00:05:18,509 --> 00:05:23,911
+and don't go RoundRectangle2D, sorry
+RoundRectangle2D.
+
+75
+00:05:23,911 --> 00:05:32,160
+So I want that, and I'm gonna say new
+RoundRectangle2D.
+
+76
+00:05:32,160 --> 00:05:36,390
+And I think we've got double, there we go,
+we've got a double constructor again.
+
+77
+00:05:36,390 --> 00:05:38,449
+And so you see they, they provided
+
+78
+00:05:38,449 --> 00:05:41,646
+kinda double the float purchase of these
+classes.
+
+79
+00:05:41,646 --> 00:05:44,924
+I'm not really sure, that's just how it
+works.
+
+80
+00:05:44,924 --> 00:05:48,890
+And once again, if I hover my mouse over
+there.
+
+81
+00:05:48,890 --> 00:05:50,110
+[INAUDIBLE] added import.
+
+82
+00:05:50,110 --> 00:05:52,840
+I can see we've got, an x, y, width,
+
+83
+00:05:52,840 --> 00:05:56,330
+height and the arc width and the arc
+height.
+
+84
+00:05:56,330 --> 00:06:00,350
+And that, that arc width and ar, aha,
+sorry, [LAUGH] the arc width and
+
+85
+00:06:00,350 --> 00:06:04,960
+arc height control the width and height at
+the rounded bits on the end.
+
+86
+00:06:06,020 --> 00:06:13,549
+So let's say let's put it roughly in the
+middle, like 3 maybe 200.
+
+87
+00:06:13,549 --> 00:06:19,910
+This going to be off to the left of it,
+200 x, y, and width and height.
+
+88
+00:06:19,910 --> 00:06:23,630
+So the width I'm gonna make it, maybe,
+maybe 300.
+
+89
+00:06:23,630 --> 00:06:27,200
+And the height, let's make it quite, not
+very high.
+
+90
+00:06:27,200 --> 00:06:32,292
+Let's make it like maybe just 20.
+
+91
+00:06:32,292 --> 00:06:37,052
+And then, arc width I'll have that at 20
+as well.
+
+92
+00:06:37,052 --> 00:06:39,020
+And arc height, let's set that at 20.
+
+93
+00:06:39,020 --> 00:06:41,220
+And let's see how that looks.
+
+94
+00:06:41,220 --> 00:06:44,510
+And now we've got rounded rectangle there.
+
+95
+00:06:44,510 --> 00:06:48,250
+Actually, I'm going to make that maybe a
+bit less wide.
+
+96
+00:06:48,250 --> 00:06:53,580
+So let's reduce the width to 1, maybe 100
+actually and the
+
+97
+00:06:54,750 --> 00:07:01,421
+height to maybe also 100.
+
+98
+00:07:02,890 --> 00:07:04,420
+I don't know, sorry that's x and y, isn't
+it.
+
+99
+00:07:05,580 --> 00:07:06,810
+Let's leave that as it was.
+
+100
+00:07:06,810 --> 00:07:09,530
+It's awfully confusing.
+
+101
+00:07:09,530 --> 00:07:16,800
+Okay, so that's x, y, width, I want to
+reduce the width possibly to 100.
+
+102
+00:07:16,800 --> 00:07:18,980
+And the height to ten.
+
+103
+00:07:18,980 --> 00:07:22,770
+Okay, that's probably what I want.
+
+104
+00:07:22,770 --> 00:07:26,680
+So, in future tutorials, I'm gonna show
+you how to
+
+105
+00:07:26,680 --> 00:07:29,870
+turn this kinda into a butt, that's gonna
+hit this ball.
+
+106
+00:07:29,870 --> 00:07:31,840
+So we're gonna have a really, really
+simple game.
+
+107
+00:07:31,840 --> 00:07:34,340
+With no, I'm not gonna bother putting any
+scoring in.
+
+108
+00:07:34,340 --> 00:07:35,860
+I'm sure I can leave that to you.
+
+109
+00:07:35,860 --> 00:07:39,140
+But a really simple game just to
+demonstrate some,
+
+110
+00:07:39,140 --> 00:07:44,050
+further techniques, like using timers, and
+double buffering and animation.
+
+111
+00:07:44,050 --> 00:07:45,350
+This sorta thing.
+
+112
+00:07:45,350 --> 00:07:47,790
+Okay, so we'll leave it there for this
+tutorial.
+
+113
+00:07:47,790 --> 00:07:49,120
+Join me again next time.
+
+114
+00:07:49,120 --> 00:07:51,275
+And until then, happy coding.
+
+115
+00:07:51,275 --> 00:07:54,864
+[SOUND]
+
