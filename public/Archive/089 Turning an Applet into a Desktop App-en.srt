@@ -1,0 +1,564 @@
+1
+00:00:00,780 --> 00:00:03,920
+Hello this is John from cave of programming.
+
+2
+00:00:04,040 --> 00:00:06,930
+A second video that I'm adding to this course.
+
+3
+00:00:06,930 --> 00:00:09,720
+Two years later after finishing the course.
+
+4
+00:00:10,080 --> 00:00:16,590
+So here I've got my running applet and I have applied the two fixes that I mention in the video that
+
+5
+00:00:16,590 --> 00:00:19,730
+I added at the start of this section of the course.
+
+6
+00:00:19,860 --> 00:00:23,650
+So the ball's bouncing the right way and it also works on the Mac.
+
+7
+00:00:23,820 --> 00:00:28,180
+And in this tutorial I'm going to show you how to get this working as a desktop app.
+
+8
+00:00:28,440 --> 00:00:30,020
+So this is pretty good.
+
+9
+00:00:30,060 --> 00:00:30,990
+Little challenge.
+
+10
+00:00:31,020 --> 00:00:37,600
+If you've been following along the tutorial and writing code itself and getting it to work then hopefully
+
+11
+00:00:37,600 --> 00:00:41,470
+you should be able to figure out how to create a desk top up from this.
+
+12
+00:00:41,610 --> 00:00:46,250
+In case you can't or in case you want to see an example of how you would actually do that.
+
+13
+00:00:46,260 --> 00:00:49,480
+I'm going to show you how to do it here.
+
+14
+00:00:49,620 --> 00:00:53,190
+So let's let's quit this and go to eclipse.
+
+15
+00:00:53,450 --> 00:01:01,440
+And the first thing I'm going to do here is we're going to need a we're going to need a J frame or a
+
+16
+00:01:01,440 --> 00:01:03,020
+class that extends Jay frame.
+
+17
+00:01:03,020 --> 00:01:08,460
+So I'm just going to add this to the existing code that includes the applet stuff and then we'll be
+
+18
+00:01:08,460 --> 00:01:12,400
+able to run it either as an app player or as a desktop program.
+
+19
+00:01:12,540 --> 00:01:19,170
+So I'm going to go to I'm going to right click and go to new class and let's call this mainframe and
+
+20
+00:01:19,170 --> 00:01:20,120
+click finish.
+
+21
+00:01:20,130 --> 00:01:29,280
+And I'm going to say that this extends Jay frame and I'm going to add Firstly the input at the top with
+
+22
+00:01:29,490 --> 00:01:33,390
+control shift so or command shift on the mark.
+
+23
+00:01:33,680 --> 00:01:35,020
+And we're going to call.
+
+24
+00:01:35,100 --> 00:01:43,410
+We're going to create a constructor here so mainframe like this I now call the version of the parent
+
+25
+00:01:43,410 --> 00:01:47,440
+class constructor that takes a string parameter.
+
+26
+00:01:47,460 --> 00:01:50,310
+That's just the title that goes on the window.
+
+27
+00:01:50,310 --> 00:01:52,580
+Let's call this animation demo.
+
+28
+00:01:53,790 --> 00:01:58,340
+So this error a lot of people have asked me about this and this this is just.
+
+29
+00:01:58,740 --> 00:02:05,220
+You may know it's just that if you extend the class that is serialise hippel or you make your class
+
+30
+00:02:06,090 --> 00:02:10,920
+in implement the serialise will interface.
+
+31
+00:02:10,920 --> 00:02:17,760
+Then you get this warning because this is just a thing so that if one save your objects to a file you
+
+32
+00:02:17,760 --> 00:02:25,920
+can have a version IDM which you can change if you create a new version of your program and you don't
+
+33
+00:02:25,920 --> 00:02:31,170
+want people loading the new version of your object from a file containing the old version.
+
+34
+00:02:31,200 --> 00:02:34,100
+So I cover serialisation in my job for beginners.
+
+35
+00:02:34,320 --> 00:02:40,670
+But for here I'm just going to add a generated serial version to I.D. just to get rid of that warnings
+
+36
+00:02:40,720 --> 00:02:45,690
+just it's just nice not to see it really they don't really always have to worry about these warnings
+
+37
+00:02:45,690 --> 00:02:46,880
+too much.
+
+38
+00:02:46,950 --> 00:02:54,490
+K. So in the constructor let's get this a size let's make make this call set size and set that to eight
+
+39
+00:02:54,520 --> 00:02:57,700
+hundred wide six hundred high.
+
+40
+00:02:58,320 --> 00:03:04,330
+I'm going to set it to visible and say set visible true to actually show the window.
+
+41
+00:03:05,130 --> 00:03:10,710
+And I'm also going to say set default close operation.
+
+42
+00:03:10,870 --> 00:03:13,760
+Unless this is just going to make it close.
+
+43
+00:03:13,800 --> 00:03:19,930
+When we click the cross in a corner of the window window exit on close is a constant from a frame.
+
+44
+00:03:20,130 --> 00:03:27,040
+We don't have to say J framed likes it on clothes because were already within a frame subclass here.
+
+45
+00:03:27,480 --> 00:03:30,720
+So that's that's just a really basic blank window.
+
+46
+00:03:30,930 --> 00:03:38,060
+Now let's go to the project right click and go to new class and I'll create a class with a main method.
+
+47
+00:03:38,160 --> 00:03:41,660
+I'll call this main notes call at map.
+
+48
+00:03:41,760 --> 00:03:48,350
+We've already got the main and ticked to say do you want the public static void main method.
+
+49
+00:03:48,840 --> 00:03:59,090
+And in there I need to call swing utilities dot invoke later invoke later.
+
+50
+00:03:59,880 --> 00:04:05,400
+So very people have asked me why we need to start this swink up this way why comany just go out and
+
+51
+00:04:05,400 --> 00:04:07,040
+create the J frame.
+
+52
+00:04:07,050 --> 00:04:10,850
+The best answer I can give is just that this is the recommended way of doing it.
+
+53
+00:04:11,010 --> 00:04:16,230
+Maybe it causes problems if you got multithreaded that if you don't do this or something like that but
+
+54
+00:04:16,230 --> 00:04:20,460
+this is the way Oracle recommends So it is the way we should do it.
+
+55
+00:04:20,460 --> 00:04:25,500
+This creates some kind of special thread that your swing runs in.
+
+56
+00:04:25,560 --> 00:04:37,580
+Now here we could say new runnable run ball like this add in brackets this is an anonymous class.
+
+57
+00:04:37,620 --> 00:04:44,670
+If I click the error I can go to add on implementing methods and in here we can add our j frame we can
+
+58
+00:04:44,670 --> 00:04:49,790
+create a frame just by saying new main frame.
+
+59
+00:04:49,890 --> 00:04:53,200
+That's the way I've been showing you how to do it in these videos.
+
+60
+00:04:53,430 --> 00:04:59,870
+But now if you're using Java 8 you can also use landell expressions instead and as.
+
+61
+00:05:00,090 --> 00:05:01,330
+I know in my free.
+
+62
+00:05:01,340 --> 00:05:03,120
+Dollar for beginners course.
+
+63
+00:05:03,140 --> 00:05:04,360
+Let's check the list works.
+
+64
+00:05:04,360 --> 00:05:11,260
+First going to right click up Doc chaffer and go to run as job application.
+
+65
+00:05:11,320 --> 00:05:14,020
+And now we get a blank window here.
+
+66
+00:05:14,540 --> 00:05:19,620
+So an alternative way an alternative to Anonymous classes like this.
+
+67
+00:05:19,640 --> 00:05:26,600
+If you've got an anonymous class just to implement an Interface only has one method called functional
+
+68
+00:05:26,600 --> 00:05:28,240
+interfaces in Java.
+
+69
+00:05:28,250 --> 00:05:34,760
+A terminology you can do with a land expression and that little like this will have two round brackets
+
+70
+00:05:35,180 --> 00:05:37,450
+and an arrow like that.
+
+71
+00:05:38,120 --> 00:05:45,530
+And then a couple of brackets where we can put in some code and then we can just do the same thing say
+
+72
+00:05:45,530 --> 00:05:46,700
+new J frame.
+
+73
+00:05:46,810 --> 00:05:51,370
+So this is just the equivalent syntax to all we have before rarely with the anonymous class.
+
+74
+00:05:51,380 --> 00:05:52,810
+Sign new mainframe.
+
+75
+00:05:53,030 --> 00:05:55,810
+It's just a bit more terse and this is called.
+
+76
+00:05:55,850 --> 00:05:59,940
+This is a just a simple example of what we call a land expression.
+
+77
+00:05:59,950 --> 00:06:05,200
+It just great allows you to create little anonymous functions that you can pass to other functions to
+
+78
+00:06:05,210 --> 00:06:06,350
+other methods.
+
+79
+00:06:06,350 --> 00:06:11,820
+And you can also use these in the same way for handling button clicks which is quite nice.
+
+80
+00:06:11,840 --> 00:06:13,710
+That's just a few using Java a.
+
+81
+00:06:13,970 --> 00:06:15,380
+So let's check it again.
+
+82
+00:06:15,600 --> 00:06:20,000
+It's run as Java application and yet looks like it's working.
+
+83
+00:06:20,840 --> 00:06:24,530
+So now we can just copy some code into our mainframe.
+
+84
+00:06:24,530 --> 00:06:30,860
+So normally I would try to avoid copying code but here we have you know we've clearly got a some Aplin
+
+85
+00:06:30,860 --> 00:06:39,430
+related code here and we just need this in our alternative Jay frame swing related desktop code.
+
+86
+00:06:39,590 --> 00:06:41,770
+So here I am just going to copy this.
+
+87
+00:06:41,980 --> 00:06:47,240
+Probably you wouldn't want the applet code and the swing code in the same Java application but there's
+
+88
+00:06:47,240 --> 00:06:49,920
+no harm in leaving this in here.
+
+89
+00:06:50,060 --> 00:06:52,010
+You'll still be able to run it as a desktop.
+
+90
+00:06:52,270 --> 00:06:58,770
+So I'm just going to copy all this stuff at the top of the J applet in main Java code.
+
+91
+00:06:58,970 --> 00:07:02,070
+I'm going to copy all these variables over to mainframe.
+
+92
+00:07:02,180 --> 00:07:09,350
+Let's paste them in here and we'll go back to the main Java the uplook code and copy all this stuff
+
+93
+00:07:09,350 --> 00:07:10,560
+from init.
+
+94
+00:07:10,610 --> 00:07:12,530
+We need all of that.
+
+95
+00:07:12,950 --> 00:07:21,010
+Go back to mainframe Java and I'm going to put that in the constructor before we make the window visible.
+
+96
+00:07:21,320 --> 00:07:27,930
+Still looks like we have to do a little bit of work here and slits to save that actually and see what
+
+97
+00:07:27,930 --> 00:07:28,740
+it says.
+
+98
+00:07:28,760 --> 00:07:33,030
+So now we need to get in this anonymous class here.
+
+99
+00:07:33,860 --> 00:07:36,260
+We could use the lander expression for that.
+
+100
+00:07:36,260 --> 00:07:39,610
+I think this only has one interface.
+
+101
+00:07:39,710 --> 00:07:43,750
+Sorry one method this interface but I'll leave it as it is.
+
+102
+00:07:43,760 --> 00:07:49,490
+Let's just open that because yes so here we could use alandra expression we got an interface which is
+
+103
+00:07:49,490 --> 00:07:51,510
+one method.
+
+104
+00:07:52,040 --> 00:07:55,210
+But equally there's no harm leaving it like this.
+
+105
+00:07:55,220 --> 00:08:00,560
+What we do need to change is now mainframe's of this not maned on this to get there.
+
+106
+00:08:00,590 --> 00:08:09,290
+This reference of the mainframe and here where were creating a timer.
+
+107
+00:08:09,290 --> 00:08:14,600
+I think this year the only thing we have to do here is our class here is going to have to implement
+
+108
+00:08:14,630 --> 00:08:23,810
+action listener let's say imply men's action listener so that we can create a method that is called
+
+109
+00:08:23,810 --> 00:08:24,680
+by the timer.
+
+110
+00:08:24,710 --> 00:08:27,150
+It's clear the error the warning.
+
+111
+00:08:27,170 --> 00:08:33,080
+Yeah it's an error actually go to import action listner click it again and go to add on implementing
+
+112
+00:08:33,080 --> 00:08:34,230
+methods.
+
+113
+00:08:34,310 --> 00:08:39,440
+And now we get this which is going to be called every time the timer runs.
+
+114
+00:08:39,470 --> 00:08:46,640
+So go back to maned Java and we can see that previously we called game of date and the action performed
+
+115
+00:08:46,730 --> 00:08:48,730
+for our timer.
+
+116
+00:08:48,950 --> 00:08:54,280
+So now we need to do the same thing just pace that in here.
+
+117
+00:08:54,860 --> 00:08:56,950
+The other thing is we need to start a timer.
+
+118
+00:08:56,960 --> 00:09:04,070
+In the original uplook code we've got this code that calls time indot star when the applets is started
+
+119
+00:09:04,460 --> 00:09:10,110
+and calls time indot Stop when the apla Stops when it goes into the background or whatever.
+
+120
+00:09:10,280 --> 00:09:12,190
+That's not really relevant with swingarm.
+
+121
+00:09:12,200 --> 00:09:15,020
+We just want to start running and carry on running.
+
+122
+00:09:15,230 --> 00:09:15,720
+Really.
+
+123
+00:09:15,740 --> 00:09:16,320
+Probably.
+
+124
+00:09:16,340 --> 00:09:21,060
+So let's go to make framed Java and somewhere in here.
+
+125
+00:09:21,060 --> 00:09:22,070
+Sure we show the window.
+
+126
+00:09:22,070 --> 00:09:27,680
+It doesn't really matter actually we'll call time it does start now free right click here and go to
+
+127
+00:09:27,680 --> 00:09:31,350
+run as Java application instead of our plr.
+
+128
+00:09:31,640 --> 00:09:32,990
+Hopefully will see the same thing.
+
+129
+00:09:32,990 --> 00:09:33,670
+So here it is.
+
+130
+00:09:33,670 --> 00:09:35,330
+Now its running as a desktop.
+
+131
+00:09:35,450 --> 00:09:39,130
+We clicked this and it works just as before.
+
+132
+00:09:39,530 --> 00:09:47,060
+Okay so the you can apply these animation techniques to swing desktop that's just like this and that
+
+133
+00:09:47,060 --> 00:09:52,740
+is most often where you're probably gonna want to use them especially since it kind of looks like applets
+
+134
+00:09:52,850 --> 00:09:53,950
+might be on their way out.
+
+135
+00:09:53,960 --> 00:09:59,300
+To be honest with Chrome not supporting them but people I'm sure are still going to be using it for
+
+136
+00:09:59,300 --> 00:09:59,720
+some time.
+
+137
+00:09:59,810 --> 00:10:07,550
+I'm just within companies where as I say as I said in the video at the start of the course you can control
+
+138
+00:10:07,550 --> 00:10:13,910
+what browser people uses you use and you can control the security settings of the browser.
+
+139
+00:10:14,250 --> 00:10:16,370
+Okay so that's it for this tutorial.
+
+140
+00:10:16,610 --> 00:10:17,820
+Until next time.
+
+141
+00:10:17,840 --> 00:10:19,320
+Happy coding.
+

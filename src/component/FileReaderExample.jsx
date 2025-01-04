@@ -1,11 +1,15 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const FileReaderExample = () => {
+
+
+const FileReaderExample = ({ handleParseContent }) => {
     const [fileContent, setFileContent] = useState('');
     const [fileName, setFileName] = useState('');
 
     const handleFileSelect = (event) => {
         const file = event.target.files[0];
+        handleParseContent(file);
         if (file) {
             const reader = new FileReader();
 
@@ -13,6 +17,7 @@ const FileReaderExample = () => {
             reader.onload = (e) => {
                 setFileContent(e.target.result);
                 setFileName(file.name);
+                // handleParseContent(e.target.result);
             };
 
             reader.onerror = (e) => {
@@ -22,7 +27,6 @@ const FileReaderExample = () => {
             reader.readAsText(file); // Use readAsText for text files
         }
     };
-
     return (
         <div>
             <h2>Select a File to Read</h2>
@@ -37,5 +41,7 @@ const FileReaderExample = () => {
         </div>
     );
 };
-
+FileReaderExample.propTypes = {
+    handleParseContent: PropTypes.func
+}
 export default FileReaderExample;

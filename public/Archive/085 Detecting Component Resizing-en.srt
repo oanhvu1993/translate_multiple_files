@@ -1,0 +1,185 @@
+1
+00:00:01,770 --> 00:00:05,170
+Hello, this is John, from
+caveofprogramming.com, and
+
+2
+00:00:05,170 --> 00:00:07,220
+in this tutorial, we're going to look
+
+3
+00:00:07,220 --> 00:00:15,630
+at how to find out when your component has
+been resized, which is often useful.
+
+4
+00:00:15,630 --> 00:00:18,430
+So if I run this now, the whole screen
+
+5
+00:00:18,430 --> 00:00:21,680
+on my Applet is taken up by this custom
+component.
+
+6
+00:00:21,680 --> 00:00:24,280
+And I'm actually doing some double
+
+7
+00:00:24,280 --> 00:00:27,510
+buffering, as I explained in previous
+tutorials.
+
+8
+00:00:27,510 --> 00:00:31,770
+But it means that I've got an image here
+that I'm drawing to, but if I resize my
+
+9
+00:00:31,770 --> 00:00:37,510
+component, then the image doesn't change
+its size, even
+
+10
+00:00:37,510 --> 00:00:41,180
+though the custom component I've got has
+become bigger.
+
+11
+00:00:41,180 --> 00:00:45,100
+So what I need to do is create a bigger
+image where my component's resized.
+
+12
+00:00:45,100 --> 00:00:49,680
+And for that I need to intercept the
+resize event.
+
+13
+00:00:49,680 --> 00:00:52,340
+So I'm gonna go into my custom component
+code
+
+14
+00:00:52,340 --> 00:00:56,480
+here, which is called Gain, and it extends
+J component.
+
+15
+00:00:56,480 --> 00:00:59,690
+And in the Constructor here, where I've
+already got a bunch of stuff
+
+16
+00:00:59,690 --> 00:01:02,630
+listening to the mouse, and keys
+
+17
+00:01:02,630 --> 00:01:05,710
+among other things, I'm gonna say
+addComponentListener.
+
+18
+00:01:06,950 --> 00:01:09,291
+Now componentListener takes a class that
+
+19
+00:01:09,291 --> 00:01:12,893
+implements a componentListener interface,
+but a componentListener
+
+20
+00:01:12,893 --> 00:01:16,385
+interface has quite a lot of methods, and
+I don't need most of them.
+
+21
+00:01:16,385 --> 00:01:21,974
+So I'm gonna use here, not a new
+componentListener anonymous class, but a
+
+22
+00:01:21,974 --> 00:01:26,780
+new componentAdapter, adapter, which
+implements kinda dummy
+
+23
+00:01:26,780 --> 00:01:30,641
+versions of all of the componentListener
+methods.
+
+24
+00:01:30,641 --> 00:01:34,624
+Let's do Ctrl + Shift to override the
+imports, and I'll
+
+25
+00:01:34,624 --> 00:01:39,650
+right-click in there and go to Source >
+Override Implement Methods, and
+
+26
+00:01:39,650 --> 00:01:42,660
+these are all the, well actually, there's
+only four of them, componentAdapter
+
+27
+00:01:42,660 --> 00:01:48,520
+methods, and I just want to deal with the
+componentResized method here.
+
+28
+00:01:48,520 --> 00:01:50,290
+And I all I need to do for this tutorial
+
+29
+00:01:50,290 --> 00:01:56,380
+actually, is, is just set my buffer, my
+image to null.
+
+30
+00:01:57,390 --> 00:01:59,380
+If the component is resized because I got
+
+31
+00:01:59,380 --> 00:02:02,190
+this code that I did in the previous
+tutorial
+
+32
+00:02:02,190 --> 00:02:06,460
+in Paint component, that creates a new
+buffered image
+
+33
+00:02:06,460 --> 00:02:09,350
+at the right size if the buffer is null.
+
+34
+00:02:10,560 --> 00:02:16,865
+So if I run this now, and I resize it, my
+component that I am correctly, intercepts
+
+35
+00:02:16,865 --> 00:02:21,760
+to resize event and it makes my, my
+buffer,
+
+36
+00:02:21,760 --> 00:02:26,110
+my double buffer bigger or smaller as is
+necessary.
+
+37
+00:02:26,110 --> 00:02:27,600
+So that's it for this tutorial, join me
+
+38
+00:02:27,600 --> 00:02:31,165
+again next time and until next time, happy
+coding.
+
+39
+00:02:31,165 --> 00:02:33,874
+[NOISE]
+

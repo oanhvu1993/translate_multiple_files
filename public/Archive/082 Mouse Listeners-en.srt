@@ -1,0 +1,411 @@
+1
+00:00:01,480 --> 00:00:04,350
+Hello, this is John from
+caveofprogramming.com,
+
+2
+00:00:04,350 --> 00:00:05,990
+and in this tutorial we're gonna look
+
+3
+00:00:05,990 --> 00:00:10,970
+at listening to the mouse and finding out
+what the mouse is doing.
+
+4
+00:00:10,970 --> 00:00:13,920
+And I'm gonna make this bat move around
+with the mouse.
+
+5
+00:00:15,030 --> 00:00:20,320
+So this is an applet, but one swing here
+applies to any kind of swing application.
+
+6
+00:00:20,320 --> 00:00:24,780
+And I've got this custom component down
+here which I called game.
+
+7
+00:00:24,780 --> 00:00:28,460
+But it's actually extending JComponent in
+this case.
+
+8
+00:00:28,460 --> 00:00:32,810
+And I'm gonna give this the constructor
+some public game.
+
+9
+00:00:32,810 --> 00:00:33,330
+Like this.
+
+10
+00:00:33,330 --> 00:00:36,790
+And then in the constructor, I'm going to
+say at mouse.
+
+11
+00:00:36,790 --> 00:00:39,380
+Now, you can add a mouse motion listener.
+
+12
+00:00:39,380 --> 00:00:43,138
+A mouse listener or a mouse wheel
+listener, and in this
+
+13
+00:00:43,138 --> 00:00:48,056
+tutorial well, for now I'm gonna use add
+mouse motion listener.
+
+14
+00:00:48,056 --> 00:00:55,300
+And I'm gonna say new mouse motion
+listener in there and that's an interface.
+
+15
+00:00:55,300 --> 00:00:59,310
+So I'm gonna have an anonymous class here
+which
+
+16
+00:00:59,310 --> 00:01:06,220
+implements the two methods, mouse dragged
+and mouse moved.
+
+17
+00:01:06,220 --> 00:01:08,570
+Let's get rid of stuff that we don't
+really need here.
+
+18
+00:01:10,850 --> 00:01:17,040
+And in mouse moved I'm gonna, let's just
+duce this out for the moment and
+
+19
+00:01:17,040 --> 00:01:24,180
+say, e.get getX to get the X position of
+the mouse.
+
+20
+00:01:24,180 --> 00:01:28,430
+And if I run that now if I move my mouse
+over
+
+21
+00:01:28,430 --> 00:01:31,790
+here, you can see that we're getting the
+exposition of the mouse.
+
+22
+00:01:32,860 --> 00:01:37,610
+Now just to do something with that for the
+moment I'm gonna
+
+23
+00:01:37,610 --> 00:01:43,600
+take this and draw in this kind of
+rectangle somewhere in here.
+
+24
+00:01:43,600 --> 00:01:43,940
+Let's see.
+
+25
+00:01:43,940 --> 00:01:47,120
+So I've got this, where it's a round
+rectangle.
+
+26
+00:01:47,120 --> 00:01:48,390
+I'm gonna take that out of there.
+
+27
+00:01:48,390 --> 00:01:51,490
+And I'm actually gonna do, I'll do Ctrl+X.
+
+28
+00:01:51,490 --> 00:01:52,600
+And I'm gonna call that, bat.
+
+29
+00:01:52,600 --> 00:01:56,900
+Because it's gonna be like a bat to hit
+the ball with, ultimately.
+
+30
+00:01:56,900 --> 00:01:59,320
+And up here, I'm gonna say private.
+
+31
+00:01:59,320 --> 00:02:02,616
+Let's paste in that code that I just cut.
+
+32
+00:02:02,616 --> 00:02:09,955
+And I'm gonna say,
+privaterectangle2D.double bat, equals.
+
+33
+00:02:09,955 --> 00:02:10,885
+So we're drawing the bat.
+
+34
+00:02:10,885 --> 00:02:12,975
+Let's check that that still works.
+
+35
+00:02:12,975 --> 00:02:14,385
+Don't know why it's so much smaller now.
+
+36
+00:02:15,725 --> 00:02:16,225
+And
+
+37
+00:02:18,275 --> 00:02:18,915
+let's run that.
+
+38
+00:02:18,915 --> 00:02:19,845
+There we go, okay.
+
+39
+00:02:19,845 --> 00:02:20,705
+So there's my bat.
+
+40
+00:02:20,705 --> 00:02:22,350
+And now I'm gonna say here.
+
+41
+00:02:24,160 --> 00:02:33,680
+When the mouse is moved, I'm going to say
+bat.x equals e.getX.
+
+42
+00:02:33,680 --> 00:02:35,795
+So I'm going to get the X coordinate of my
+
+43
+00:02:35,795 --> 00:02:39,295
+mouse from the mouse event that's passed
+into mou, mouse moved.
+
+44
+00:02:39,295 --> 00:02:42,300
+And just set the position of the bat to
+it.
+
+45
+00:02:42,300 --> 00:02:44,280
+And since I've already got animation code
+
+46
+00:02:44,280 --> 00:02:46,310
+in here that's updating the screen
+regularly,
+
+47
+00:02:46,310 --> 00:02:48,920
+which I showed you in previous tutorials,
+
+48
+00:02:48,920 --> 00:02:51,810
+that should move the bat around the
+screen.
+
+49
+00:02:51,810 --> 00:02:55,430
+So, let's let's run this, and then we go,
+it's following my mouse.
+
+50
+00:02:55,430 --> 00:03:00,900
+And, actually I, I probably don't want it
+to follow the I probably want the bat to
+
+51
+00:03:00,900 --> 00:03:08,110
+center on the mouse, so to fix that I'm
+just gonna do bat.x.
+
+52
+00:03:08,110 --> 00:03:10,910
+Equals bat.,
+
+53
+00:03:12,340 --> 00:03:18,654
+I think, I think I wanna say that the X
+position of the bat is gonna equal
+
+54
+00:03:18,654 --> 00:03:25,740
+e.getX, negative bat.get with over 2.
+
+55
+00:03:25,740 --> 00:03:33,056
+And the Y position, I'm gonna subtract
+bat.get height over two.
+
+56
+00:03:33,056 --> 00:03:37,950
+Just to put the the bat, there we go, in
+the center of where the mouse is.
+
+57
+00:03:39,310 --> 00:03:41,980
+Now if you wanted to detect mouse clicks,
+
+58
+00:03:41,980 --> 00:03:45,370
+it's pretty much the same, with a little
+twist.
+
+59
+00:03:45,370 --> 00:03:50,070
+So I am gonna say, add mouse, add mouse
+listener this time.
+
+60
+00:03:50,070 --> 00:03:53,590
+Now, I could say here, new mouse listener,
+but mouse listener has a lot of
+
+61
+00:03:53,590 --> 00:03:57,990
+methods, it has like five or something and
+I don't wanna overwrite all of them.
+
+62
+00:03:57,990 --> 00:03:59,890
+So, I am gonna use a mouse adapter
+
+63
+00:03:59,890 --> 00:04:04,210
+and a mouse adapter class, new mouse
+adapter here
+
+64
+00:04:04,210 --> 00:04:07,950
+implements all the methods of mouse
+listener which
+
+65
+00:04:07,950 --> 00:04:11,880
+is a dummy kind of, dummy kind of method.
+
+66
+00:04:11,880 --> 00:04:14,180
+Stops [INAUDIBLE] Ctrl+Shift+O.
+
+67
+00:04:15,630 --> 00:04:18,124
+Now if I right, if I left-click in there
+and
+
+68
+00:04:18,124 --> 00:04:22,320
+right-click and go to Source > Override >
+Implement Methods.
+
+69
+00:04:22,320 --> 00:04:25,050
+These are all the methods of the
+mouseAdapter class.
+
+70
+00:04:25,050 --> 00:04:27,950
+And I'm just going to override this one in
+this case: mouseClicked.
+
+71
+00:04:29,140 --> 00:04:34,120
+Now this has got mouse, a mouseMove
+method, but I think
+
+72
+00:04:34,120 --> 00:04:36,360
+I'm right in saying that if you wanted to
+take mouseMoved,
+
+73
+00:04:36,360 --> 00:04:40,070
+you've got to, you've got to do
+addMouseMotionListener, because if you
+
+74
+00:04:40,070 --> 00:04:43,130
+do addMouseListener, you'll get clicked
+events,
+
+75
+00:04:43,130 --> 00:04:46,860
+but not events relating to movement.
+
+76
+00:04:46,860 --> 00:04:52,790
+So and in here just to do something with
+it, let's just say maybe I've
+
+77
+00:04:54,160 --> 00:04:59,094
+got this shape called ball and I'll just
+set the ball.x
+
+78
+00:04:59,094 --> 00:05:03,535
+equal to e.getX
+
+79
+00:05:03,535 --> 00:05:07,975
+and ball.y equals
+
+80
+00:05:07,975 --> 00:05:12,650
+e.getY, so the mouse click gets
+
+81
+00:05:12,650 --> 00:05:15,450
+this mouse event, and the mouse event
+
+82
+00:05:15,450 --> 00:05:17,510
+has the coordinates where the mouse is
+clicked.
+
+83
+00:05:17,510 --> 00:05:19,410
+So if I run this now, so I'm dragging my
+bat
+
+84
+00:05:19,410 --> 00:05:22,220
+around and if I click, then the ball will
+go there.
+
+85
+00:05:24,380 --> 00:05:28,910
+It actually looks like it's bouncing off
+the bat, but it's, it's not, it's just
+
+86
+00:05:28,910 --> 00:05:35,930
+that it's setting it to the actual bat
+location when I click it.
+
+87
+00:05:38,140 --> 00:05:41,230
+Okay so that's it for this tutorial.
+
+88
+00:05:41,230 --> 00:05:42,950
+And join me again next time.
+
+89
+00:05:42,950 --> 00:05:45,030
+And until next time, happy coding.
+

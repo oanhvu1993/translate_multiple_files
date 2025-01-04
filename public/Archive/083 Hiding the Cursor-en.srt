@@ -1,0 +1,234 @@
+1
+00:00:01,660 --> 00:00:05,090
+Hello, this is John from
+Caveartprogramming.com, and in this
+
+2
+00:00:05,090 --> 00:00:07,980
+tutorial, we're just gonna look at hiding
+the cursor.
+
+3
+00:00:07,980 --> 00:00:10,772
+So sometimes you want to hide the cursor
+and especially in
+
+4
+00:00:10,772 --> 00:00:15,290
+uploads but maybe another swing programs
+to games and that kinda thing.
+
+5
+00:00:15,290 --> 00:00:19,190
+And to do that to make the cursor
+invisible, I'm gonna go to
+
+6
+00:00:19,190 --> 00:00:23,110
+the construct of my component, which takes
+up most of the screen here.
+
+7
+00:00:24,880 --> 00:00:27,120
+And so here's my constructor.
+
+8
+00:00:27,120 --> 00:00:32,240
+And I'm gonna say, get tool kit.
+
+9
+00:00:32,240 --> 00:00:35,020
+So every component has a method called
+
+10
+00:00:35,020 --> 00:00:37,670
+JComponent answer method call get tool
+kit.
+
+11
+00:00:37,670 --> 00:00:40,810
+And I'm gonna say, set.
+
+12
+00:00:42,244 --> 00:00:44,300
+I think it set, or is it create?
+
+13
+00:00:46,460 --> 00:00:47,350
+Yeah, I've forgotten.
+
+14
+00:00:47,350 --> 00:00:49,830
+Oh yeah, create custom cursor.
+
+15
+00:00:49,830 --> 00:00:53,880
+So I'm gonna say, get talk and create
+custom cursor.
+
+16
+00:00:53,880 --> 00:01:00,091
+And now that takes a bunch of arguments
+here And the first argument is
+
+17
+00:01:00,091 --> 00:01:06,710
+well the last argument here is gonna be, I
+think, it's just a name for the cursor.
+
+18
+00:01:06,710 --> 00:01:11,250
+I'm gonna set up to an empty string
+because it doesn't really matter here.
+
+19
+00:01:11,250 --> 00:01:13,289
+Let's put the semicolon on the end.
+
+20
+00:01:14,800 --> 00:01:20,680
+This middle argument is the I think it's
+the, the cursor kinda hotspot.
+
+21
+00:01:20,680 --> 00:01:25,430
+So we're going to pass an image in here
+and we wanna say, where the center of
+
+22
+00:01:25,430 --> 00:01:30,280
+the cursor is in that image and I'm just
+going to set that to point one comma one.
+
+23
+00:01:30,280 --> 00:01:30,920
+All right.
+
+24
+00:01:30,920 --> 00:01:34,340
+We need to pass a new point here just add
+the import.
+
+25
+00:01:34,340 --> 00:01:41,090
+And the most important argument here is,
+if I wanna hide the cursor, I need to
+
+26
+00:01:41,090 --> 00:01:45,150
+create an image here, but it's gonna have
+to be a transparent image so I'm gonna
+
+27
+00:01:45,150 --> 00:01:52,840
+have to say new buffered image, and I'm
+gonna pass in the size here of one pixel
+
+28
+00:01:52,840 --> 00:01:59,695
+by one pixel, and for the type of buffered
+image, I'm gonna say, buffered image.
+
+29
+00:01:59,695 --> 00:02:06,480
+And I wanna pick a type that has a alpha
+argument like type int
+
+30
+00:02:06,480 --> 00:02:13,000
+ARGB, A stays for alpha, and alpha means
+that there's transparency in the image.
+
+31
+00:02:13,000 --> 00:02:16,680
+So if I put that in there, I'm gonna
+create hopefully
+
+32
+00:02:16,680 --> 00:02:20,700
+a transparent image, that that we wont be
+able to see.
+
+33
+00:02:20,700 --> 00:02:21,790
+So if I run that now.
+
+34
+00:02:23,580 --> 00:02:23,800
+oh, yeah.
+
+35
+00:02:23,800 --> 00:02:25,050
+You can still see the mouse.
+
+36
+00:02:26,110 --> 00:02:30,520
+And that's because, I need to set the
+cursor, which I almost forgot.
+
+37
+00:02:30,520 --> 00:02:31,750
+The most important thing.
+
+38
+00:02:31,750 --> 00:02:35,180
+So we've done create custom cursor here
+and that returns a cursor.
+
+39
+00:02:35,180 --> 00:02:39,726
+So I'm going to say cursor, hidden cursor
+equals
+
+40
+00:02:39,726 --> 00:02:45,060
+gettoolkit.createcustom cursor passing
+your transparent image,
+
+41
+00:02:46,700 --> 00:02:53,353
+one pixel by one pixel and then, finally,
+I'll just do [INAUDIBLE]
+
+42
+00:02:53,353 --> 00:03:00,110
+and call it set cursor and, pass in that
+hidden cursor.
+
+43
+00:03:00,110 --> 00:03:05,760
+I've just created this stuff and now
+they're actually, [INAUDIBLE] the end.
+
+44
+00:03:05,760 --> 00:03:08,010
+And if I run this.
+
+45
+00:03:08,010 --> 00:03:10,660
+Now the cursor has gone, but it's still
+there.
+
+46
+00:03:10,660 --> 00:03:13,830
+And I can still click it and, and all the
+stuff
+
+47
+00:03:13,830 --> 00:03:16,150
+I can do before I move this bat around
+with it.
+
+48
+00:03:17,600 --> 00:03:17,905
+Okay?
+
+49
+00:03:17,905 --> 00:03:20,380
+So that's it for this tutorial and until
+next time.
+
+50
+00:03:20,380 --> 00:03:21,120
+Happy coding.
+

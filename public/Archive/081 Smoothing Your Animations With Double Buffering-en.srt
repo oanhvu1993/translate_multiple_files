@@ -1,0 +1,414 @@
+1
+00:00:01,780 --> 00:00:04,600
+Hello this is John from
+caveofprogramming.com
+
+2
+00:00:04,600 --> 00:00:06,370
+and in this tutorial we're gonna look
+
+3
+00:00:06,370 --> 00:00:12,520
+at a technique called double buffering,
+that is used to make animations smoother.
+
+4
+00:00:13,650 --> 00:00:18,874
+And so actually I'm gonna start just by
+getting rid of these these
+
+5
+00:00:18,874 --> 00:00:22,300
+sysouts in here, because we don't need
+them, while I think of it.
+
+6
+00:00:23,370 --> 00:00:29,790
+And, double buffering involves doing your
+drawing to an off screen image, and
+
+7
+00:00:29,790 --> 00:00:36,250
+then when the drawing is all complete, you
+draw that off screen image on the screen.
+
+8
+00:00:36,250 --> 00:00:40,800
+So one big cause of flickery, or
+flickering, in animation is that
+
+9
+00:00:40,800 --> 00:00:44,900
+you're kind of drawing stuff while it's
+being shown on the screen.
+
+10
+00:00:44,900 --> 00:00:46,660
+And that, that can cause flickering.
+
+11
+00:00:46,660 --> 00:00:49,280
+And we're gonna avoid that by drawing to
+an offscreen image, and
+
+12
+00:00:49,280 --> 00:00:53,020
+then drawing that all at once to the
+screen when it's complete.
+
+13
+00:00:53,020 --> 00:00:54,710
+So I've got this game class here.
+
+14
+00:00:54,710 --> 00:00:57,520
+And at the moment, it looks like this, in
+the last
+
+15
+00:00:57,520 --> 00:01:00,870
+tutorial, we got this ball kind of
+animating, bouncing around the screen.
+
+16
+00:01:00,870 --> 00:01:01,370
+And
+
+17
+00:01:03,170 --> 00:01:05,420
+let's just minimize that.
+
+18
+00:01:05,420 --> 00:01:10,310
+And I'm gonna, here in a moment, I'm
+drawing everything in Paint Component.
+
+19
+00:01:10,310 --> 00:01:13,620
+This is like a custom component directly
+to the
+
+20
+00:01:13,620 --> 00:01:18,880
+graphics associated with this screen,
+directly to this Graphics 2D.
+
+21
+00:01:18,880 --> 00:01:20,700
+So I'm gonna say here.
+
+22
+00:01:20,700 --> 00:01:26,540
+I'm gonna give it an instance variable of
+type private, buffered image.
+
+23
+00:01:26,540 --> 00:01:28,840
+And, and I'll call that buffer.
+
+24
+00:01:30,920 --> 00:01:33,560
+now, let's have the import there.
+
+25
+00:01:33,560 --> 00:01:39,890
+Now because that's a instance variable it
+will be initialized to null, and
+
+26
+00:01:39,890 --> 00:01:44,780
+for reasons that you'll see in the next
+tutorial, I'm actually in paint component.
+
+27
+00:01:44,780 --> 00:01:50,475
+And to allocate this image, so I'm gonna
+say if buffer equals
+
+28
+00:01:50,475 --> 00:01:55,841
+null, then I'm gonna say buffer equals new
+buffered
+
+29
+00:01:55,841 --> 00:02:01,538
+image, new buffered image, and constructor
+here takes
+
+30
+00:02:01,538 --> 00:02:07,660
+a wet fighting image type, and I'm gonna
+say, get width.
+
+31
+00:02:07,660 --> 00:02:11,203
+That's calling my J component get with
+met, method.
+
+32
+00:02:11,203 --> 00:02:16,360
+Get height, because I want it to be the
+same size as my component, and
+
+33
+00:02:17,610 --> 00:02:23,510
+the image type here, I'm gonna set to
+buffered
+
+34
+00:02:23,510 --> 00:02:28,880
+image.type
+
+35
+00:02:28,880 --> 00:02:33,190
+I think the one that I need here is gonna
+
+36
+00:02:33,190 --> 00:02:37,040
+be type int RGB, red, green, blue.
+
+37
+00:02:38,344 --> 00:02:40,990
+So let's, let's try that, see how it
+looks.
+
+38
+00:02:40,990 --> 00:02:46,070
+And save that and now, I can get a
+
+39
+00:02:46,070 --> 00:02:51,783
+graphics here associated with my buffered
+image, and say
+
+40
+00:02:51,783 --> 00:02:58,660
+buffer.get, get, graphics and that will
+return me a graphics 2D.
+
+41
+00:02:58,660 --> 00:03:06,730
+So, graphics 2D G2 equals, and I think I
+
+42
+00:03:06,730 --> 00:03:10,890
+need to cast that into graphics 2D, which
+is, which it really is behind the scenes.
+
+43
+00:03:12,390 --> 00:03:15,800
+And now I won't use my G2 here anymore.
+
+44
+00:03:15,800 --> 00:03:16,730
+I'll delete that.
+
+45
+00:03:16,730 --> 00:03:21,010
+So I'll carry on drawing to G2 but now I'm
+actually drawing to this image.
+
+46
+00:03:22,070 --> 00:03:26,800
+And finally, when I've finished drawing,
+I'm gonna say
+
+47
+00:03:26,800 --> 00:03:30,450
+G, which is the actual graphics here in
+paint component.
+
+48
+00:03:30,450 --> 00:03:37,140
+It's passed to paint component to paint
+component with g.draw image.
+
+49
+00:03:37,140 --> 00:03:39,150
+And I'm going to pass in, well I don't
+think
+
+50
+00:03:39,150 --> 00:03:41,720
+I want that one, I'm going to pass in my
+buffer.
+
+51
+00:03:41,720 --> 00:03:42,220
+And
+
+52
+00:03:43,960 --> 00:03:47,600
+I think there's a better constructor that
+I can use.
+
+53
+00:03:47,600 --> 00:03:53,720
+So, I think I just need xYWidth.
+
+54
+00:03:54,810 --> 00:03:56,500
+Let's use this one.
+
+55
+00:03:56,500 --> 00:04:00,170
+So I'm gonna draw the image out of
+coordinate zero.
+
+56
+00:04:00,170 --> 00:04:02,150
+X is zero, Y is zero.
+
+57
+00:04:02,150 --> 00:04:03,290
+An imageObserver.
+
+58
+00:04:03,290 --> 00:04:04,020
+We don't need that.
+
+59
+00:04:04,020 --> 00:04:07,500
+I'm just going to set it to null.
+
+60
+00:04:07,500 --> 00:04:11,350
+So now when I run it it's gonna draw to
+
+61
+00:04:11,350 --> 00:04:13,740
+my image and then draw the image to the
+screen.
+
+62
+00:04:13,740 --> 00:04:18,930
+And, if, if I compare this to my original
+one, I
+
+63
+00:04:18,930 --> 00:04:21,550
+don't really know if you can see any
+difference at all there.
+
+64
+00:04:21,550 --> 00:04:22,920
+I don't think I can.
+
+65
+00:04:22,920 --> 00:04:28,400
+But, in theory, using double buffering,
+you are less likely to get flicker.
+
+66
+00:04:28,400 --> 00:04:33,880
+So it's, it's probably worth doing
+especially
+
+67
+00:04:33,880 --> 00:04:36,560
+if your application does flicker a lot.
+
+68
+00:04:36,560 --> 00:04:41,120
+If it doesn't, if you run it and it looks
+fine, then maybe don't bother doing this.
+
+69
+00:04:42,290 --> 00:04:43,560
+Anyway, so I'll leave that.
+
+70
+00:04:43,560 --> 00:04:47,490
+And there's one other thing some people
+say helps, but I'm
+
+71
+00:04:47,490 --> 00:04:52,810
+not really sure about it because the
+jComponent has an update method.
+
+72
+00:04:52,810 --> 00:04:57,761
+Let's go to source > override > implement
+methods.
+
+73
+00:04:57,761 --> 00:05:01,990
+And in here somewhere, it's got a method
+called update.
+
+74
+00:05:01,990 --> 00:05:04,000
+Go to the bottom here and hope it's there.
+
+75
+00:05:04,000 --> 00:05:05,020
+There it is.
+
+76
+00:05:05,020 --> 00:05:09,250
+Which accepts the graphics and, update
+apparently
+
+77
+00:05:09,250 --> 00:05:12,870
+calls paint and passes in the graphics.
+
+78
+00:05:12,870 --> 00:05:18,280
+And paint calls paint component,
+paintboard and paint children.
+
+79
+00:05:19,440 --> 00:05:21,260
+But apparently, according to what I read
+on
+
+80
+00:05:21,260 --> 00:05:23,200
+the internet, I can't absolutely vouch for
+this.
+
+81
+00:05:24,360 --> 00:05:27,950
+Update also does a clear of the screen,
+
+82
+00:05:27,950 --> 00:05:30,710
+and since we're, since we are ourselves
+are
+
+83
+00:05:30,710 --> 00:05:35,130
+actually clearing screen, here making it
+black, we
+
+84
+00:05:35,130 --> 00:05:36,590
+don't want to have update doing it as
+well.
+
+85
+00:05:36,590 --> 00:05:42,380
+So it may make your animation even
+smoother, just to overwrite update and
+
+86
+00:05:42,380 --> 00:05:49,500
+call paint directly and bypass that that
+alleged clearing of the screen.
+
+87
+00:05:49,500 --> 00:05:49,750
+Okay.
+
+88
+00:05:49,750 --> 00:05:53,410
+So that's over buffering and that's it for
+this tutorial and
+
+89
+00:05:53,410 --> 00:05:56,890
+join me again next time and until next
+time, happy coding.
+
