@@ -1,0 +1,436 @@
+1
+00:00:02,930 --> 00:00:06,390
+Hello, this is John from
+caveofprogramming.com and in this
+
+2
+00:00:06,390 --> 00:00:09,680
+tutorial we're gonna look at key listeners
+in Java.
+
+3
+00:00:09,680 --> 00:00:13,550
+So key listeners are actually somewhat
+similar to mouse listeners
+
+4
+00:00:13,550 --> 00:00:15,630
+although a bit different at the same time
+of course.
+
+5
+00:00:16,950 --> 00:00:19,240
+So if I go to my, I've got my J component
+here.
+
+6
+00:00:20,830 --> 00:00:24,690
+And now you can add a key listener to a
+particular
+
+7
+00:00:24,690 --> 00:00:29,590
+component by saying add key listener and
+then passing in a
+
+8
+00:00:29,590 --> 00:00:33,640
+new key listener you could say like new
+key listener, and
+
+9
+00:00:33,640 --> 00:00:35,060
+then just have an anonymous class
+
+10
+00:00:35,060 --> 00:00:38,380
+here that implements this keyListener
+interface.
+
+11
+00:00:38,380 --> 00:00:43,095
+And just as we've done for
+mouseMotionListener.
+
+12
+00:00:43,095 --> 00:00:47,490
+But the problem with that is, you'll have
+problems with focus,
+
+13
+00:00:47,490 --> 00:00:51,640
+because to add a keyListener to your
+component, it must be focusable.
+
+14
+00:00:51,640 --> 00:00:59,350
+So you may need to call setFocusable,
+setFocusable and set that to true.
+
+15
+00:00:59,350 --> 00:01:03,370
+And also it must have the focus in order
+to receive key events.
+
+16
+00:01:03,370 --> 00:01:07,160
+And that can be problematic at times and
+if that's what you want to do.
+
+17
+00:01:07,160 --> 00:01:10,140
+If you just want a key listener that does
+a particular thing in a
+
+18
+00:01:10,140 --> 00:01:14,930
+particular text field for example, then
+you probably want to do add key listener.
+
+19
+00:01:14,930 --> 00:01:17,990
+But here, I'm gonna add a sort of global
+key listener, that
+
+20
+00:01:17,990 --> 00:01:24,530
+intercepts all the key clicks that the
+applications gets because it's it means
+
+21
+00:01:24,530 --> 00:01:27,090
+that my J component, which takes up the
+whole screen in this
+
+22
+00:01:27,090 --> 00:01:31,090
+case, doesn't have to have the keyboard
+focus which is what I want.
+
+23
+00:01:32,760 --> 00:01:39,260
+So I'm gonna say get default I'm gonna
+say, actually, keyboard,
+
+24
+00:01:39,260 --> 00:01:45,220
+keyboard focus manager, keyboard focus
+manager dot
+
+25
+00:01:45,220 --> 00:01:48,740
+and we're gonna use a static method of the
+
+26
+00:01:48,740 --> 00:01:52,650
+keyboard focus manager class called get
+current keyboard focus manager.
+
+27
+00:01:52,650 --> 00:01:56,220
+And this kind of manages the keyboard
+somehow.
+
+28
+00:01:56,220 --> 00:01:59,790
+And I'm gonna say add key event
+dispatcher.
+
+29
+00:02:00,830 --> 00:02:05,780
+And, cause this will allow me to add a
+class that can intercept my key events,
+
+30
+00:02:06,940 --> 00:02:11,200
+and the rest of what I'm gonna show you
+now is very similar to what you'd do if
+
+31
+00:02:11,200 --> 00:02:16,720
+are adding, just doing add key list now on
+a particular component, so I need a new
+
+32
+00:02:16,720 --> 00:02:21,240
+key event dispatcher here, rather than a
+new key,
+
+33
+00:02:21,240 --> 00:02:24,090
+keyListener as would be the case without a
+keyListener.
+
+34
+00:02:24,090 --> 00:02:28,720
+And let's just add, create an anonymous
+class there, at the import.
+
+35
+00:02:28,720 --> 00:02:32,560
+Ctrl+Shift+O and right, and left-click
+this
+
+36
+00:02:32,560 --> 00:02:35,730
+arrow and go to add unimplemented methods.
+
+37
+00:02:35,730 --> 00:02:39,080
+And we're just going to implement this
+
+38
+00:02:39,080 --> 00:02:40,430
+dispatchKeyEvent and keyListener has an
+equivalent method.
+
+39
+00:02:40,430 --> 00:02:41,620
+And I'll just call it keyEvent.
+
+40
+00:02:43,040 --> 00:02:43,690
+That's passed in.
+
+41
+00:02:43,690 --> 00:02:45,090
+I'll just call it E.
+
+42
+00:02:45,090 --> 00:02:47,250
+Let's get rid of some of this [UNKNOWN].
+
+43
+00:02:47,250 --> 00:02:48,990
+And you return true here.
+
+44
+00:02:48,990 --> 00:02:53,010
+If you wanna say we've handled the key,
+don't pass it on anywhere else.
+
+45
+00:02:53,010 --> 00:02:55,280
+And, otherwise, you return false.
+
+46
+00:02:55,280 --> 00:02:58,580
+And I'm just gonna return false always
+here because I wanna
+
+47
+00:02:58,580 --> 00:03:01,840
+handle keys, but I don't wanna stop other
+things potentially handling them.
+
+48
+00:03:01,840 --> 00:03:03,390
+Not that there are any other things, but
+
+49
+00:03:03,390 --> 00:03:07,280
+if there were I wouldn't want to stop
+them.
+
+50
+00:03:07,280 --> 00:03:10,358
+So, and now here I'm going to say switch.
+
+51
+00:03:10,358 --> 00:03:19,580
+Actually I'll say int key equals e dot get
+key code.
+
+52
+00:03:21,550 --> 00:03:26,020
+And now I wanna, in this case I wanna
+detect which arrows have been clicked.
+
+53
+00:03:26,020 --> 00:03:29,320
+So you could just do a sysout on key here
+and
+
+54
+00:03:29,320 --> 00:03:33,660
+press keys and see what key code comes up,
+if you're curious.
+
+55
+00:03:33,660 --> 00:03:39,910
+I'm gonna do, like, switch key and, then
+let's
+
+56
+00:03:39,910 --> 00:03:43,070
+say case and I'm gonna use key event
+class.
+
+57
+00:03:45,210 --> 00:03:47,510
+And this is the same for if you do add
+
+58
+00:03:47,510 --> 00:03:52,070
+key listener and there there's a, for
+example, a I
+
+59
+00:03:54,150 --> 00:03:55,750
+think it's arrow up.
+
+60
+00:03:55,750 --> 00:03:58,430
+I can never remember these values.
+
+61
+00:03:58,430 --> 00:03:59,980
+Let's just take a look.
+
+62
+00:03:59,980 --> 00:04:04,050
+Yeah, we got a bunch of, v case stands for
+virtual key.
+
+63
+00:04:04,050 --> 00:04:09,580
+And the constants that you need for things
+like the function keys and the arrow keys.
+
+64
+00:04:09,580 --> 00:04:12,000
+They're all vk this, vk that.
+
+65
+00:04:12,000 --> 00:04:18,490
+So we've got a vk up, for example, so
+let's add vk up.
+
+66
+00:04:18,490 --> 00:04:23,150
+So if the key code equals vk up, let's
+just put a break in there.
+
+67
+00:04:24,520 --> 00:04:30,780
+And just for now let's just do sysout
+Ctrl+Space Return up.
+
+68
+00:04:30,780 --> 00:04:36,090
+Let's, now let's run that and check that
+it's working.
+
+69
+00:04:36,090 --> 00:04:38,270
+So if I hit the up key now.
+
+70
+00:04:38,270 --> 00:04:39,910
+We can see that in a console it says up.
+
+71
+00:04:39,910 --> 00:04:41,540
+So that seems to be working.
+
+72
+00:04:41,540 --> 00:04:45,050
+And I'm gonna, mix my C editor here.
+
+73
+00:04:46,480 --> 00:04:52,830
+And that's, in the case that up is is
+called.
+
+74
+00:04:52,830 --> 00:04:57,330
+I've got a bat shape object that's an
+instance variable.
+
+75
+00:04:57,330 --> 00:05:01,200
+And I'm drawing the bat thing on the
+screen.
+
+76
+00:05:01,200 --> 00:05:05,430
+And I'm updating, I'm repainting the
+screen like every 20 milliseconds.
+
+77
+00:05:05,430 --> 00:05:08,770
+So I'm just gonna say back dot y, and if I
+wanna
+
+78
+00:05:08,770 --> 00:05:13,590
+go up, I have to say negative equals let's
+call this bat speed.
+
+79
+00:05:14,930 --> 00:05:19,400
+So because y increases down the screen,
+and the screen redraws from the top.
+
+80
+00:05:19,400 --> 00:05:22,050
+And I'm just gonna add it, add in a prior
+date.
+
+81
+00:05:23,140 --> 00:05:29,200
+Double that speed, which I'll set equal
+to, I don't know, maybe 10.
+
+82
+00:05:29,200 --> 00:05:31,150
+10.0, there we go.
+
+83
+00:05:31,150 --> 00:05:38,560
+So I'm gonna move my bat in response to
+the key being pressed.
+
+84
+00:05:38,560 --> 00:05:40,620
+Now, let's just copy these because I want
+four
+
+85
+00:05:40,620 --> 00:05:45,580
+of them, so one, two, one, two, three,
+four.
+
+86
+00:05:45,580 --> 00:05:51,830
+And I'm gonna have down, which is gonna
+add to the position of the bat.
+
+87
+00:05:51,830 --> 00:06:01,476
+And I'm gonna have vk left, the left arrow
+key, which is gonna subtract from X.
+
+88
+00:06:01,476 --> 00:06:07,340
+And vk right is gonna add to
+
+89
+00:06:07,340 --> 00:06:13,620
+x here, so, let's have add, and with a bit
+of luck now, I'm gonna hit,
+
+90
+00:06:13,620 --> 00:06:19,790
+use the arrow keys to move the to move
+this sort of bat thing around.
+
+91
+00:06:19,790 --> 00:06:25,180
+Okay, so that's it for this tutorial and
+join me again next time.
+
+92
+00:06:25,180 --> 00:06:28,130
+And until next time, happy coding.
+

@@ -1,0 +1,12 @@
+{
+    "watch": [
+        "server.js"
+    ],
+    "ignore": [
+        "node_modules",
+        "logs"
+    ],
+    "ext": "js,json",
+    "exec": "node server.js",
+    "verbose": true
+}

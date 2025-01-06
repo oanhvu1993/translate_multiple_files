@@ -1,0 +1,433 @@
+1
+00:00:02,130 --> 00:00:05,090
+Hello this is John from
+caveofprogamming.com.
+
+2
+00:00:05,090 --> 00:00:07,740
+And in this tutorial we're gonna look at
+card layout.
+
+3
+00:00:08,790 --> 00:00:10,900
+So, card layout let's you switch
+
+4
+00:00:10,900 --> 00:00:14,730
+between completely different views in your
+application.
+
+5
+00:00:14,730 --> 00:00:17,407
+So if I run this now, I've got this panel
+showing
+
+6
+00:00:17,407 --> 00:00:20,360
+up with a button that just outputs text at
+the moment.
+
+7
+00:00:21,630 --> 00:00:24,670
+But I want this button to switch to a
+completely different view.
+
+8
+00:00:24,670 --> 00:00:28,390
+Which is gonna be my game thingamajig.
+
+9
+00:00:28,390 --> 00:00:30,950
+And you can use card, a kind of card
+layout.
+
+10
+00:00:30,950 --> 00:00:32,560
+It's like a kind of deck of cards
+
+11
+00:00:32,560 --> 00:00:34,150
+where you can switch between the different
+cards.
+
+12
+00:00:34,150 --> 00:00:36,810
+And you can have as man as you like.
+
+13
+00:00:36,810 --> 00:00:40,074
+And I'm gonna use that to switch from this
+to my game.
+
+14
+00:00:40,074 --> 00:00:43,271
+You can use them of course not only in
+games but also
+
+15
+00:00:43,271 --> 00:00:48,670
+in, for example dialogue to create wizards
+and all that kind of thing.
+
+16
+00:00:48,670 --> 00:00:54,030
+Now so here my main my main class
+
+17
+00:00:54,030 --> 00:00:59,046
+which is an applet in this particular
+case.
+
+18
+00:00:59,046 --> 00:01:01,678
+I've got my two panels, so this is my game
+
+19
+00:01:01,678 --> 00:01:04,360
+is a J component it take up the whole
+screen.
+
+20
+00:01:04,360 --> 00:01:11,738
+And this start panel is a panel, which of
+course is also a type of jcomponent.
+
+21
+00:01:11,738 --> 00:01:19,100
+I'm gonna start here by creating here a
+private card layout, card layout.
+
+22
+00:01:20,130 --> 00:01:24,380
+I'll call it cards and add the import with
+Ctrl+Shift+O.
+
+23
+00:01:24,380 --> 00:01:28,360
+And in my init method, all this will be
+your
+
+24
+00:01:28,360 --> 00:01:31,464
+probably your constructor if you're doing
+a desktop screen program.
+
+25
+00:01:31,464 --> 00:01:39,220
+I'm gonna say Cards equals newCardLayout.
+
+26
+00:01:39,220 --> 00:01:39,720
+There we go.
+
+27
+00:01:40,790 --> 00:01:45,650
+And now where do I set layout, at the
+moment I'm setting a board layout.
+
+28
+00:01:45,650 --> 00:01:47,750
+I am gonna change that to my card layout.
+
+29
+00:01:47,750 --> 00:01:51,640
+And when I do add, instead of adding using
+these
+
+30
+00:01:51,640 --> 00:01:55,250
+board layout constants, I am gonna add
+using a descriptive string.
+
+31
+00:01:55,250 --> 00:02:00,740
+So, I am gonna call the start panel, start
+and then let's also add the game.
+
+32
+00:02:00,740 --> 00:02:03,015
+And I'll call that game.
+
+33
+00:02:04,230 --> 00:02:08,166
+So these are just strings that you kinda
+make up so
+
+34
+00:02:08,166 --> 00:02:13,090
+you can refer to your different components
+or panels later on.
+
+35
+00:02:13,090 --> 00:02:16,899
+And now, so if I run that the, the one
+that I added first will be the
+
+36
+00:02:16,899 --> 00:02:19,672
+one that's visible, which is my start
+panel,
+
+37
+00:02:19,672 --> 00:02:22,610
+so it still looks the same at the moment.
+
+38
+00:02:22,610 --> 00:02:25,925
+But what I'm gonna do is instead of
+outputting hello
+
+39
+00:02:25,925 --> 00:02:31,110
+there when I click the button, I want to
+say cards.show.
+
+40
+00:02:31,110 --> 00:02:33,120
+And show has two arguments here.
+
+41
+00:02:35,150 --> 00:02:39,139
+So let's try to bring up the autocomplete
+for that cuz that will be informative.
+
+42
+00:02:40,214 --> 00:02:43,440
+cards.show.
+
+43
+00:02:43,440 --> 00:02:44,020
+There we go.
+
+44
+00:02:44,020 --> 00:02:49,640
+So you need to pass in the parent
+container and and the
+
+45
+00:02:49,640 --> 00:02:52,930
+name that you added, the string that you
+added when you did add.
+
+46
+00:02:54,690 --> 00:02:58,490
+Now if you yeah.
+
+47
+00:02:58,490 --> 00:03:01,980
+Actually, one thing I forgot to mention
+before was that,
+
+48
+00:03:01,980 --> 00:03:04,440
+and this is the same for an applet or a
+JFrame.
+
+49
+00:03:05,780 --> 00:03:08,300
+When you add components to the JFrame or
+to a
+
+50
+00:03:08,300 --> 00:03:13,650
+JApplet with add you're not strictly
+speaking, adding them to the
+
+51
+00:03:14,740 --> 00:03:17,654
+JFrame or JApplet class you're adding them
+to its content
+
+52
+00:03:17,654 --> 00:03:20,770
+pane, which is kind of like a panel that
+it contains.
+
+53
+00:03:22,080 --> 00:03:24,914
+And you can get that content pain if you
+want.
+
+54
+00:03:24,914 --> 00:03:26,920
+I didn't get content pain.
+
+55
+00:03:26,920 --> 00:03:28,330
+And that will allow you to set it's
+
+56
+00:03:28,330 --> 00:03:29,770
+background color and all that kind of
+thing.
+
+57
+00:03:29,770 --> 00:03:31,624
+So if you want to set the background color
+of
+
+58
+00:03:31,624 --> 00:03:33,815
+JFrame you need to do,
+
+59
+00:03:33,815 --> 00:03:36,700
+getContentPane().setBackground or whatever
+it is.
+
+60
+00:03:38,670 --> 00:03:39,750
+That's worth bearing in mind.
+
+61
+00:03:39,750 --> 00:03:42,660
+And the relevance here is that I don't
+want
+
+62
+00:03:42,660 --> 00:03:45,760
+to pass in, literally a reference to the
+parent.
+
+63
+00:03:45,760 --> 00:03:48,815
+I want to pass in a reference to the
+content pane of the parent.
+
+64
+00:03:48,815 --> 00:03:51,016
+Now in an anonymous class here.
+
+65
+00:03:51,016 --> 00:03:55,767
+So if I type, I can't type this
+getContactPanel because this would be
+
+66
+00:03:55,767 --> 00:04:01,627
+refer to this anonymous class here which
+implements startPanelListener.
+
+67
+00:04:01,627 --> 00:04:08,489
+To get that this reference of the parent
+frame, cuz my parent class is called main,
+
+68
+00:04:08,489 --> 00:04:15,202
+I can say main.this, which is kind of a
+strange syntax but that's how it works.
+
+69
+00:04:15,202 --> 00:04:20,987
+And then, from there I can get the, I can
+use, I can call up the getContentPane
+
+70
+00:04:20,987 --> 00:04:26,850
+method of the parent, in this case a
+JApplet, or it may be a JFrame.
+
+71
+00:04:26,850 --> 00:04:32,400
+So let's add that in and so that gives me
+the parent container of the, that
+
+72
+00:04:32,400 --> 00:04:34,220
+I've set the card layer on, which is
+
+73
+00:04:34,220 --> 00:04:38,620
+actually the content frame of this
+enclosing main class.
+
+74
+00:04:41,200 --> 00:04:46,480
+And now I'm just gonna pass in the
+descriptive string which is gonna be
+
+75
+00:04:46,480 --> 00:04:50,740
+game, because I want it to switch to game
+when you click the button.
+
+76
+00:04:50,740 --> 00:04:51,760
+So now let's run that.
+
+77
+00:04:51,760 --> 00:04:53,000
+And of course, you can have as many of
+
+78
+00:04:53,000 --> 00:04:55,270
+these panels as you want, and switch
+between different ones.
+
+79
+00:04:56,670 --> 00:05:03,120
+And in, yeah, I, I just wanna remind you
+as well, in the last tutorial I added
+
+80
+00:05:03,120 --> 00:05:07,620
+to the content, the start panel here,
+which I created using the visual designer.
+
+81
+00:05:07,620 --> 00:05:11,210
+I added this set listener method.
+
+82
+00:05:11,210 --> 00:05:14,840
+And I set the main class as a listener.
+
+83
+00:05:14,840 --> 00:05:20,940
+And I call fire start game, which calls
+start game in the listener.
+
+84
+00:05:20,940 --> 00:05:24,010
+Actually, it's not the main class for
+editors,
+
+85
+00:05:24,010 --> 00:05:26,120
+the list is strictly speaking, but this
+anonymous class.
+
+86
+00:05:27,120 --> 00:05:29,880
+So when you click the button, invokes this
+basically.
+
+87
+00:05:29,880 --> 00:05:31,270
+This is listening to the panel.
+
+88
+00:05:32,582 --> 00:05:35,998
+So let's just run that, and now if I click
+new simulation, it
+
+89
+00:05:35,998 --> 00:05:39,370
+goes to my simulation or game or whatever
+you like to call it.
+
+90
+00:05:41,000 --> 00:05:42,646
+So, that's it for this tutorial.
+
+91
+00:05:42,646 --> 00:05:46,580
+And in the next tutorial, we're gonna look
+at making this that actually work.
+
+92
+00:05:46,580 --> 00:05:49,890
+So, join me again then and until next
+time, happy coding.
+

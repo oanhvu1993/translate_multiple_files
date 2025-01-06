@@ -1,0 +1,897 @@
+1
+00:00:01,470 --> 00:00:04,990
+Hello this is John from
+caveofprogramming.com and in
+
+2
+00:00:04,990 --> 00:00:08,446
+this tutorial we're gonna look at
+deploying your applet.
+
+3
+00:00:08,446 --> 00:00:17,250
+So applet deploying applets can get
+potentially a little bit complex.
+
+4
+00:00:17,250 --> 00:00:22,590
+And can do stuff like figure out if the
+user has the right version of the the
+
+5
+00:00:22,590 --> 00:00:25,060
+Java plugin needed to run it and download
+
+6
+00:00:25,060 --> 00:00:27,490
+it automatically if not and that kind of
+thing.
+
+7
+00:00:27,490 --> 00:00:30,190
+But in here I'm just gonna show you a
+really simple way of deploying
+
+8
+00:00:30,190 --> 00:00:35,690
+it and if you need more information I
+shall refer you to Google because I
+
+9
+00:00:35,690 --> 00:00:39,460
+don't want to get too diverted with
+applets cuz this is really a Swing
+
+10
+00:00:39,460 --> 00:00:41,010
+tutorial, but just for the sake of
+
+11
+00:00:41,010 --> 00:00:43,670
+completeness, let's take a quick look at
+this.
+
+12
+00:00:43,670 --> 00:00:46,780
+So at the moment my applet runs and I've
+
+13
+00:00:46,780 --> 00:00:49,560
+got this applet that's set to 600 by 500
+here.
+
+14
+00:00:49,560 --> 00:00:53,740
+And I'm gonna right click the project
+folder and
+
+15
+00:00:53,740 --> 00:00:57,400
+I'm gonna go to Export JAR file cause I
+
+16
+00:00:57,400 --> 00:00:58,780
+want to create a JAR file with all my
+
+17
+00:00:58,780 --> 00:01:03,080
+applet's resources and class file and I'll
+click Next.
+
+18
+00:01:03,080 --> 00:01:07,280
+I often find with this wizard actually
+that it remembers settings
+
+19
+00:01:07,280 --> 00:01:11,430
+from previous projects, and sometimes that
+can cause problems and you'll have
+
+20
+00:01:11,430 --> 00:01:14,390
+to fiddle around with it a bit and make
+sure it
+
+21
+00:01:14,390 --> 00:01:17,620
+has settings compatible with your current
+project which is a slight annoyance.
+
+22
+00:01:18,860 --> 00:01:22,070
+And but I've actually filled in some
+
+23
+00:01:22,070 --> 00:01:25,050
+settings already to, to check that this
+works.
+
+24
+00:01:25,050 --> 00:01:28,120
+And, I want here to export generator
+
+25
+00:01:28,120 --> 00:01:31,200
+class files and resources, that's very
+important.
+
+26
+00:01:31,200 --> 00:01:32,740
+I could put my source files in there as
+
+27
+00:01:32,740 --> 00:01:35,550
+well if I want but that's absolutely not
+necessary.
+
+28
+00:01:35,550 --> 00:01:40,310
+And I'm gonna export this to this path
+here.
+
+29
+00:01:40,310 --> 00:01:42,430
+I'm gonna call it deploy.jar.
+
+30
+00:01:42,430 --> 00:01:45,740
+I'm calling it deploy.jar it could be
+called absolutely anything.
+
+31
+00:01:45,740 --> 00:01:49,260
+We're gonna export that JAR file to this,
+this directory.
+
+32
+00:01:50,930 --> 00:01:55,360
+And let's just go through the list click
+Next, and you
+
+33
+00:01:55,360 --> 00:01:59,110
+probably want to uncheck export class
+files with compile errors because of
+
+34
+00:01:59,110 --> 00:02:02,310
+course there shouldn't be any compile
+errors in your code if
+
+35
+00:02:02,310 --> 00:02:04,512
+you're exporting it and if there is you
+need to fix them.
+
+36
+00:02:04,512 --> 00:02:06,910
+But the compile warnings you don't need to
+worry
+
+37
+00:02:06,910 --> 00:02:10,490
+about cuz they can be stuff like not
+having a
+
+38
+00:02:10,490 --> 00:02:14,650
+serialization ID when you know, eclipse
+thinks you, should
+
+39
+00:02:14,650 --> 00:02:18,190
+or java thinks you should and that's
+completely not important.
+
+40
+00:02:18,190 --> 00:02:19,530
+So I click Next here.
+
+41
+00:02:21,300 --> 00:02:26,530
+And I, I set these settings for a previous
+project and now I can't unset them so what
+
+42
+00:02:26,530 --> 00:02:28,745
+I've done is just, it wants to say this
+
+43
+00:02:28,745 --> 00:02:34,910
+manifest file, which contains information,
+meta information about the applet.
+
+44
+00:02:34,910 --> 00:02:37,480
+We want to save it in my project
+directory, so I've set it to
+
+45
+00:02:37,480 --> 00:02:39,405
+the current project directory and call it
+
+46
+00:02:39,405 --> 00:02:42,360
+manifest.mf, but this is really not
+important.
+
+47
+00:02:42,360 --> 00:02:44,250
+Just as long as you can bond some settings
+in
+
+48
+00:02:44,250 --> 00:02:50,000
+there that lets your jar be created
+successfully then it's fine.
+
+49
+00:02:50,000 --> 00:02:52,600
+And if you haven't touched this you
+probably don't need to touch it.
+
+50
+00:02:54,020 --> 00:02:56,340
+So I don't need to set the main class for
+an
+
+51
+00:02:56,340 --> 00:03:00,080
+applet and I'm just gonna click Finish
+keep my fingers crossed.
+
+52
+00:03:00,080 --> 00:03:02,320
+So I got warnings which is fine, but if
+you
+
+53
+00:03:02,320 --> 00:03:05,793
+get errors that's a problem and I'm just
+gonna click OK.
+
+54
+00:03:05,793 --> 00:03:08,145
+And now if I go to that directory,
+
+55
+00:03:08,145 --> 00:03:12,190
+the one that I selected, I've got this
+deployed.jar.
+
+56
+00:03:12,190 --> 00:03:16,320
+And now, I'm going to create and HTML file
+to view that deploy.jar.
+
+57
+00:03:16,320 --> 00:03:18,929
+And I could probably use Eclipse, but it's
+
+58
+00:03:18,929 --> 00:03:21,538
+simpler to use just a plainer kind of
+program
+
+59
+00:03:21,538 --> 00:03:24,005
+it's text, and I'm going to use the free
+
+60
+00:03:24,005 --> 00:03:27,619
+Notepad ++ for this, which is, I highly
+recommend.
+
+61
+00:03:27,619 --> 00:03:31,211
+And you can just just do a Google search
+for Notepad pu-,
+
+62
+00:03:31,211 --> 00:03:31,211
+.
+
+63
+00:03:31,211 --> 00:03:34,340
+Notepad++, and you'll find it.
+
+64
+00:03:34,340 --> 00:03:39,750
+So I'm gonna create a minimal HTML file
+here a minimal webpage, and I'm
+
+65
+00:03:39,750 --> 00:03:45,220
+gonna have an opening HTML tag and a
+closing HTML tag.
+
+66
+00:03:45,220 --> 00:03:47,330
+And to embed the applet in this I'm gonna
+use
+
+67
+00:03:47,330 --> 00:03:51,680
+the applet type, which I think is actually
+deprecated from HTML4.
+
+68
+00:03:51,680 --> 00:03:55,500
+So if you really want to seriously get
+into
+
+69
+00:03:55,500 --> 00:03:57,470
+applets, you probably want to take a
+little bit of
+
+70
+00:03:57,470 --> 00:04:00,850
+time to look up the official latest best
+way to
+
+71
+00:04:00,850 --> 00:04:04,660
+deploy an applet and and to bundle that
+code in.
+
+72
+00:04:04,660 --> 00:04:07,520
+I'm just going to use a simple applet tag
+here.
+
+73
+00:04:07,520 --> 00:04:10,170
+And let's close the tag, there.
+
+74
+00:04:10,170 --> 00:04:12,720
+And I'm gonna have a few attributes here.
+
+75
+00:04:12,720 --> 00:04:17,090
+I'll have a, a width matching the,
+matching my
+
+76
+00:04:18,100 --> 00:04:22,030
+the width I set in my applet in it.
+
+77
+00:04:22,030 --> 00:04:23,610
+Width of 600.
+
+78
+00:04:23,610 --> 00:04:28,740
+And I'm gonna have a height of 500.
+
+79
+00:04:28,740 --> 00:04:31,960
+I think these values are all not
+mandatory, but I'm not sure.
+
+80
+00:04:33,020 --> 00:04:37,360
+And the important attributes that you do
+need are, firstly
+
+81
+00:04:37,360 --> 00:04:41,310
+archive which has to specify the location
+of your JAR file.
+
+82
+00:04:41,310 --> 00:04:42,490
+And we'll see in a minute, this is gonna
+
+83
+00:04:42,490 --> 00:04:45,280
+be a URL if you're deploying it on the
+web.
+
+84
+00:04:45,280 --> 00:04:48,070
+But since this is going to be in my local
+directory and since I'm
+
+85
+00:04:48,070 --> 00:04:52,540
+going to save the HTML file in the same
+directory as the JAR file.
+
+86
+00:04:52,540 --> 00:04:56,290
+I just need the name of the JAR here,
+deploy.jar.
+
+87
+00:04:56,290 --> 00:04:59,130
+And finally, the code attribute, again
+very
+
+88
+00:04:59,130 --> 00:05:02,320
+important, and that's gonna specify your
+main class.
+
+89
+00:05:02,320 --> 00:05:04,799
+And my main class here is.
+
+90
+00:05:05,800 --> 00:05:10,270
+It's it's this class in the default
+package called main.
+
+91
+00:05:10,270 --> 00:05:14,660
+So you need the, the full class path
+there.
+
+92
+00:05:14,660 --> 00:05:19,575
+So if this is a patch called, package
+called gooey, I'd need gooey.main.class.
+
+93
+00:05:20,632 --> 00:05:25,850
+But this is in the default package, so I'm
+just gonna set
+
+94
+00:05:25,850 --> 00:05:31,350
+that to main.class and I'm gonna save
+this.
+
+95
+00:05:31,350 --> 00:05:33,530
+And I'll save it in the same directory as
+
+96
+00:05:33,530 --> 00:05:38,560
+the deploy.jar I've created and I'll just
+call that applet.html.
+
+97
+00:05:38,560 --> 00:05:45,640
+And let's just run this by I'll just
+double click it and open it in my browser.
+
+98
+00:05:45,640 --> 00:05:49,820
+And the only thing about applets is you
+get this thing here.
+
+99
+00:05:49,820 --> 00:05:53,020
+Actually this is saying my Java plug-in is
+out of date.
+
+100
+00:05:53,020 --> 00:05:54,710
+I'm just gonna click, run this time.
+
+101
+00:05:55,910 --> 00:05:57,740
+Say that I want to run the applet.
+
+102
+00:05:57,740 --> 00:05:58,980
+And there is my applet.
+
+103
+00:05:58,980 --> 00:06:02,490
+It doesn't do anything at the moment but
+you can see that it has displayed.
+
+104
+00:06:02,490 --> 00:06:07,670
+Now if you let's say for example, you have
+your let's create a package here.
+
+105
+00:06:07,670 --> 00:06:09,433
+Like I don't know.
+
+106
+00:06:09,433 --> 00:06:17,160
+So I'll say New>Package>gui, let's say,
+Finish.
+
+107
+00:06:17,160 --> 00:06:21,260
+And let's take these files and move them
+into the GUI package.
+
+108
+00:06:21,260 --> 00:06:25,960
+And, so now they're in there, and if go
+look
+
+109
+00:06:25,960 --> 00:06:28,580
+at name, you'll see it says package GUI at
+the top.
+
+110
+00:06:28,580 --> 00:06:35,350
+And I'm gonna right click again and go to
+export and JAR file next.
+
+111
+00:06:35,350 --> 00:06:41,720
+I'm gonna to go through screen with the
+same settings, and now
+
+112
+00:06:41,720 --> 00:06:49,000
+if I wanna deploy it I'm gonna have to say
+GUI dot.
+
+113
+00:06:49,000 --> 00:06:51,700
+In fact, I think I need slash.
+
+114
+00:06:51,700 --> 00:06:53,000
+Well let's just check this.
+
+115
+00:06:53,000 --> 00:06:57,338
+So if I run that now and run this time.
+
+116
+00:06:57,338 --> 00:07:01,670
+Then yeah I actually need, because it's,
+this literally references
+
+117
+00:07:01,670 --> 00:07:04,775
+the file within JAR, I think it's slash
+that you need.
+
+118
+00:07:04,775 --> 00:07:05,050
+Okay.
+
+119
+00:07:05,050 --> 00:07:06,840
+So let's check that.
+
+120
+00:07:06,840 --> 00:07:08,270
+Run this time.
+
+121
+00:07:08,270 --> 00:07:08,530
+Okay.
+
+122
+00:07:08,530 --> 00:07:09,860
+There we go.
+
+123
+00:07:09,860 --> 00:07:12,385
+So you've got to make sure, because when
+you when
+
+124
+00:07:12,385 --> 00:07:17,770
+you create packages, of course they map to
+kind of folders.
+
+125
+00:07:17,770 --> 00:07:19,750
+You probably know already.
+
+126
+00:07:19,750 --> 00:07:23,420
+They kind of map to folders in your
+directory structure.
+
+127
+00:07:23,420 --> 00:07:28,326
+So, in my JAR file I can hear, in
+
+128
+00:07:28,326 --> 00:07:34,090
+my bin, it's going to end up with a GUI
+folder like that, with my class in it.
+
+129
+00:07:34,090 --> 00:07:39,110
+And that's gonna match this here.
+
+130
+00:07:39,110 --> 00:07:41,610
+Now let's just take a quick look at what
+you do
+
+131
+00:07:41,610 --> 00:07:45,250
+to deploy it on the internet, and that's
+very, very simple.
+
+132
+00:07:45,250 --> 00:07:51,167
+And I've actually got a I've actually got
+a web I've got a
+
+133
+00:07:51,167 --> 00:07:57,970
+a server running the Apache web server is
+running on my on my machine here.
+
+134
+00:07:59,020 --> 00:08:00,200
+And let's just go into applet here.
+
+135
+00:08:00,200 --> 00:08:06,760
+And actually I don't know if I can maybe
+cut that from there.
+
+136
+00:08:06,760 --> 00:08:08,770
+Yeah, seems like it will let me.
+
+137
+00:08:08,770 --> 00:08:13,170
+Let's go to, I'm gonna go to a folder on
+my disc called picture squirrel.
+
+138
+00:08:13,170 --> 00:08:16,175
+And the reason it's called picture
+squirrel is.
+
+139
+00:08:16,175 --> 00:08:20,610
+Oh yeah, I can't actually cut it because I
+think my Chrome
+
+140
+00:08:20,610 --> 00:08:25,640
+browser is kind of got a lock on this
+file, so I'm gonna
+
+141
+00:08:25,640 --> 00:08:29,140
+copy it instead, I'm going to copy and I'm
+gonna go to the
+
+142
+00:08:29,140 --> 00:08:34,740
+directory that my web server's serving
+things from and paste it in there.
+
+143
+00:08:34,740 --> 00:08:40,990
+And just to prove the that this works,
+I'll change the name of this actually.
+
+144
+00:08:40,990 --> 00:08:43,860
+Let's call that applet.jar.
+
+145
+00:08:43,860 --> 00:08:47,400
+Now, this directory, cpicturesquirrel
+here, it's called picture squirrel
+
+146
+00:08:47,400 --> 00:08:49,970
+because I'm working on a website called
+picture squirrel.
+
+147
+00:08:49,970 --> 00:08:59,500
+But this this map's to my local host
+matches the local host on my machine.
+
+148
+00:08:59,500 --> 00:09:01,860
+So if I go to local host here this is the
+website that I'm
+
+149
+00:09:01,860 --> 00:09:08,280
+running, and now what I'm gonna do is
+gonna take this HTML file and applet.
+
+150
+00:09:08,280 --> 00:09:11,700
+Let's right click > copy in this applet
+folder.
+
+151
+00:09:11,700 --> 00:09:17,410
+And going to paste it in this
+picturesquirrel folder, paste,
+
+152
+00:09:17,410 --> 00:09:22,520
+and let's right click and edit in
+
+153
+00:09:22,520 --> 00:09:27,970
+notepad, Notepad++, because I changed the
+name of it, I need to change it to applet.
+
+154
+00:09:27,970 --> 00:09:31,630
+Now this now needs to be a URL because the
+
+155
+00:09:31,630 --> 00:09:33,680
+whole point of what I'm showing you here
+really is
+
+156
+00:09:33,680 --> 00:09:37,470
+that if you have this JAR on the internet,
+then
+
+157
+00:09:37,470 --> 00:09:40,100
+in your HTML file, this is gonna stay the
+same.
+
+158
+00:09:40,100 --> 00:09:43,410
+This is fine, but you're going to have to
+change this to a URL.
+
+159
+00:09:43,410 --> 00:09:44,460
+So I'll have HTTP
+
+160
+00:09:46,560 --> 00:09:50,910
+colon slash slash, and of course this is
+gonna have to be, in my case localhost.
+
+161
+00:09:50,910 --> 00:09:53,960
+Because I'm just running this on my local
+machine.
+
+162
+00:09:53,960 --> 00:09:55,150
+Strobe applet.jar.
+
+163
+00:09:55,150 --> 00:09:59,010
+And of course, you'd probably want to
+check that, that is correct.
+
+164
+00:09:59,010 --> 00:10:03,420
+Let me just copy that, and go to my
+browser here, and paste it in here.
+
+165
+00:10:05,080 --> 00:10:11,270
+And it seems not to have found it, so
+maybe I did something wrong.
+
+166
+00:10:11,270 --> 00:10:13,207
+So I've got my applet.jar there.
+
+167
+00:10:13,207 --> 00:10:16,904
+Oh yeah, I've, I actually need to put this
+in my public HTML folder.
+
+168
+00:10:16,904 --> 00:10:22,588
+So let's copy that and copy that and do
+Ctrl+X
+
+169
+00:10:22,588 --> 00:10:28,915
+and go to public HTML and paste this in
+here.
+
+170
+00:10:28,915 --> 00:10:32,192
+Oh, I've already got an applet.html but
+that's not important.
+
+171
+00:10:32,192 --> 00:10:34,108
+I'll replace them.
+
+172
+00:10:34,108 --> 00:10:38,309
+So here's applet.html and applet.jar.
+
+173
+00:10:38,309 --> 00:10:40,830
+And let's check that the JAR file is
+there.
+
+174
+00:10:40,830 --> 00:10:44,540
+And it is cuz it's asking me if I want to
+download it.
+
+175
+00:10:44,540 --> 00:10:47,600
+So I know that the URL in my HTML file is
+right.
+
+176
+00:10:47,600 --> 00:10:52,930
+And now let's go to applet.html and run
+this time.
+
+177
+00:10:52,930 --> 00:10:53,690
+And there's my applet.
+
+178
+00:10:53,690 --> 00:10:59,220
+So the take home message here is let's get
+rid of that.
+
+179
+00:10:59,220 --> 00:11:04,890
+Is that let's actually open the right one
+again.
+
+180
+00:11:04,890 --> 00:11:08,510
+Is that if you have your applet on the
+internet.
+
+181
+00:11:08,510 --> 00:11:11,220
+So let's see, in this case it's in my
+local folder.
+
+182
+00:11:11,220 --> 00:11:19,820
+But wherever you put it you need to make
+sure that the that this URL is correct and
+
+183
+00:11:19,820 --> 00:11:24,910
+correctly references your JAR file, which
+you'll need to upload to your web server.
+
+184
+00:11:24,910 --> 00:11:28,160
+Okay, so that's it for this tutorial.
+
+185
+00:11:28,160 --> 00:11:29,830
+As I said, there's a lot more you can do
+with
+
+186
+00:11:29,830 --> 00:11:34,870
+deploying applets and, and you probably
+don't wanna really use this, but
+
+187
+00:11:34,870 --> 00:11:37,010
+I, I just wanted to show you this just so
+you
+
+188
+00:11:37,010 --> 00:11:41,160
+can get it working and just for the sake
+of completeness, really.
+
+189
+00:11:41,160 --> 00:11:42,550
+So that's it for this tutorial.
+
+190
+00:11:42,550 --> 00:11:46,690
+Join me again next time and until next
+time happy programming.
+
