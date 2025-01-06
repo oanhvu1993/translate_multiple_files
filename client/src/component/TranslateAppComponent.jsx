@@ -3,18 +3,28 @@ import axios from 'axios';
 
 
 export default function TranslateAppComponent() {
-    const [inputPath, setInputPath] = useState('');
+    const [input, setInput] = useState({
+        path: "",
+        lang: ""
+    })
     const handleOnClick = async () => {
-        const path = inputPath
-        await axios.post('http://localhost:8080/translate', { path })
+        await axios.post('http://localhost:8080/translate', { path: input.path, lang: input.lang })
     }
     const handleOnChange = (e) => {
-        setInputPath(e.target.value);
+        const { name, value } = e.target;
+        setInput(prev => ({
+            ...prev,
+            [name]: value
+        }))
+        console.log(input)
     }
     return (
         <>
             <input type="file" name="" id="" />
-            <input type="text" value={inputPath} onChange={handleOnChange} />
+            <label htmlFor="">Language</label>
+            <input type="text" name="lang" id="" onChange={handleOnChange} value={input.lang} />
+            <label htmlFor="">Path</label>
+            <input type="text" name="path" value={input.path} onChange={handleOnChange} />
             <button onClick={handleOnClick}>Confirm Folder Path</button>
         </>
     )
